@@ -14,3 +14,5 @@
 </div>
 
 <p>Day 1. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/resume%20practice">코드라이언 [일단 만드는 HTML&CSS]</a></p>
+<p>Day 1. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day1">HTML Tag(Heading/Grouping/Sections), Web</a></p>
+
