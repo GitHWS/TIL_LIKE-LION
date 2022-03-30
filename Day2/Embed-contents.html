@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Contents</title>
+</head>
+<body>
+  <!-- img : html 페이지에 이미지를 삽입할 때 사용하는 태그  -->
+  <!-- 닫힘 태그가 없음, 이미지 말고 다른 콘텐츠를 추가할 수 없음  -->
+
+  <!-- src는 필수 속성으로 반드시 입력해야함 -->
+  <!-- /img/peng.png 절대경로로 사용, 맨 앞의 "/"가 root를 의마함 현재 root의 경우 Day2 폴더 -->
+  <!-- ./img/peng.png 상대경로로 사용, 맨 앞의 "./"은 현재 위치를  말하고 "../"는 현재 위치에서 밖으로 나온 위치 -->
+
+  <!-- alt : alternative의 약자, 이미지가 보이지 않을 때만 표시되는 텍스트를 표현할 때 사용하는 속성, 스크린리더와 같은 접근성을 위해 정보를 제공하는 역할도 함, 또한 이미지의 정보를 전달하기 때문에 SEO에도 영향을 주기때문에 중요한 속성 -->
+  
+  <!-- 이미지가 정상 출력 -->
+    <img src="/images/peng.png" alt="귀여운 펭귄 두마리">
+  <!-- 이미지가 출력되지 않을 때 -->
+    <img src="images/peng1.png" alt="귀여운 펭귄 두마리">
+
+  <!--
+    Q. 모든 이미지에 alt의 값이 필요할까? 
+    A. 아니다. 모든 이미지에 alt의 값이 들어있다면 스크린리더를 이용하는 장애인들은 혼란스러울 수 있다.
+    고로 디자인적 요소로 쓰이는 이미지나 아이콘 등은 alt의 값을 넣지 않아도 된다.
+    디자인적 이미지에 alt의 속성은 넣되 값을 비워두면 불필요한 설명을 스크린리더가 읽지않아서 스크린리더를 이용하는 장애인들에게 내용을 이해하는데 좋다.
+  -->
+
+
+  <!-- 반응형 이미지를 위한 srcset 속성 : 브라우저 내에서 자동으로 최적의 이미지를 선택해서 출력해준다. 다양한 크기를 가지는 동일 이미지를 최소 2개 이상 사용할 때 사용한다.-->
+  
+  <!-- x서술자, w서술자, sizes 속성 
+      x서술자 : 화소의 밀도를 의미, 디바이스의 화소 밀도(1px안의 화소의 밀집도)에 따라 이미지를 로딩하도록 브라우저에 알려준다. 
+      w서술자 : 원본 이미지의 넓이가 어느정도의 수치에 있으면 브라우저가 최적의 이미지를 로딩하도록 함, px이 아닌 w단위를 쓴다.
+      * srcset은 반드시 src 속성과 같이 사용해야한다. srcset이 동작이 안되면 src를 내보내는 백업 개념으로!
+      ** x와 w서술자는 같이 쓸 수 없다.
+      *** srcset을 사용하는 이유는 성능 최적화를 위해 사용함
+  -->
+
+  <!-- x서술자 -->
+  <!-- img/peng.png 2x => 1px 안에 2개의 화소 -->
+  <!-- img/peng.png 3x => 1px 안에 3개의 화소 -->
+
+  <img width="200px" srcset="images/peng.png 2x, images/peng.png 3x"src="images/peng.png" alt="귀여운 펭귄 두마리">
+  
+  <!-- w서술자 -->
+
+  <img width="200px" srcset="images/peng.png 300w, images/peng.png 600w, images/peng.png 900w"src="images/peng.png" alt="귀여운 펭귄 두마리">
+
+  <!-- sizes : 뷰포트의 넓이에 따라 이미지의 넓이를 조절, sizes는 css와 충돌할 수 있음(sizes가 우선적으로 적용) -->
+
+  <img width="200px" srcset="images/peng.png 300w, images/peng.png 600w, images/peng.png 900w" sizes="(min-width: 960px) 250px, (min-width: 620px) 150px, 300px" src="images/peng.png" alt="귀여운 펭귄 두마리">
+  <!-- 뷰포트의 최소 넓이가 900일때 이미지 넓이를 250px로 맞춰라 ... -->
+
+
+
+  <!-- picture : source요소와 img 요소를 통해 각기 다른 디스플레이 혹은 디바이스에 따라 조건에 맞는 이미지를 보여주는 요소 -->
+  <!-- 기본적으로 예전 기술 환경에서 동작할 수 있는 기능을 구현해두고, 최신 기술을 사용할 수 있는 환경에서는 최신 기술를 제공하여 더 나은 사용자 경혐을 제공하는 방법을 '점진적 향상 기법'이라고함 (면접질문)-->
+
+  <!-- 점진적 향상 기법을 위해 img태그도 넣어줌 -->
+  <!-- 속성 media : media 안의 조건에 맞춰서 이미지 중 하나를 선택해서 내부 img의 src에 삽입하여 출력함, source가 표현하는게 아님 -->
+  <!-- 그리고 이미지의 크기가 줄어드는 것이 아닌 '교체'가 되는 것 -->
+  
+  <picture>
+    <source srcset="images/peng.png" media="(min-width:960px)">
+    <source srcset="images/rabbit_300.png" media="(min-width:620px)">
+    <img src="images/peng.png" alt="귀여운 아기 팽귄들">
+  </picture>
+
+
+  <!-- 속성 type : 브라우저가 지원하는 포맷에 따라 이미지를 출력함-->
+  <!-- 이미지 포맷 (면접질문) -->
+  <!-- 위에서부터 만족하는 포멧을 검사하여 가장 먼저 조건에 맞는 포멧의 이미지를 사용함 -->
+  <!-- 만약 webp가 지원하지 않고 avif포멧이 지원이 된다면 그 줄의 이미지 출력, 만약 Source의 포멧을 모두 지원하지않으면 내부 img의 이미지를 출력한다.-->
+  <picture>
+    <source srcset="babies.webp" type="image/webp">
+    <source srcset="babies.avif" type="image/avif">
+    <img src="babies.jpeg" alt="귀여운 아기 팽귄들">
+  </picture>
+
+  
+
+  <!-- 
+    media태그는 이미지 자체를 교체
+    x서술자, w서술자, sizes 속성은 동일 이미지이지만 그냥 사이즈가 바뀜
+  -->
+
+  <!-- img태그와 picture태그 중 어떤게 효율적인지 생각하고 태그 선택해야함, picture를 사용할떄는 포멧을 바꾸고 싶을때 사용하고 나머지는 img만 사용해도 됨 -->
+</body>
+</html>
