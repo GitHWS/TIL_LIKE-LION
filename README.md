@@ -13,6 +13,6 @@
   <img alt="CSS3" src ="https://img.shields.io/badge/CSS3-1572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/>
 </div>
 
-<p>Day 1. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/resume%20practice">코드라이언 [일단 만드는 HTML&CSS]</a></p>
-<p>Day 2. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day1">HTML Tag(Heading/Grouping/Sections), Web</a></p>
-
+<p>3/28. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/resume%20practice">코드라이언 [일단 만드는 HTML&CSS]</a></p>
+<p>3/29. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day1">HTML Tag(Heading/Grouping/Sections), Web</a></p>
+<p>3/30. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day2">HTML Tag(Text-level Semantics/ Embedded Contents)</a></p>
