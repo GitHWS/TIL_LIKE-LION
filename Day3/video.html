@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>video</title>
+</head>
+
+<body>
+<!-- width, height의 기본 단위는 픽셀 -->
+<!-- 주의할 점 :
+iframe으로 가져온 youtube 동영상은 트래픽 과금이 유튜브로 되지만
+video로 가져올 시 개발자의 트래픽이 과금이 된다.
+트래픽은 일정한 용량이 있는데 사용자가 사용하면 트래픽이 과금되어 트래픽용량을 소모하게 되어 서버가 다운된다.
+-->
+
+<!-- track 태그 찾아보기 -->
+<video controls autoplay loop width="500">
+
+<source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+<source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+
+Sorry, your browser doesn't support embedded videos.
+
+</video>
+</body>
+
+</html>

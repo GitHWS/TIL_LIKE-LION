@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form의 종류</title>
+</head>
+<body>
+    <form action="http://localhost:8080/" method="post">
+        <!-- input은 무조건 하나의 타입만 가짐 -->
+        <input type="text" name="userId"><br>
+        <input type="password" name="userPw"><br>
+        <!-- checkbox : 여러 개의 보기처럼 복수선택이 가능함 -->
+        <input type="checkbox" name="" id=""><br>
+        <!-- radio : 보기 중 하나만 선택 가능 -->
+        <!-- 보기가 여러개일 경우 name속성의 값을 일치 시키면 하나만 선택 가능 -->
+        
+        <input type="radio" name="성별" id="male">
+        <label for="male">남</label>
+        <input type="radio" name="성별" id="female">
+        <label for="female">여</label><br>
+        <input type="color" name="" id=""><br>
+        <input type="date" name="" id=""><br>
+        <input type="datetime" name="" id=""><br>
+        <input type="email" name="" id=""><br>
+        <!-- hidden : 보이지 않지만 입력된 값을 받아서 자바스크립트로 전송하는데 주로 사용 -->
+        <input type="hidden" name=""><br>
+        <input type="range" name="" id=""><br>
+        <input type="number" name="" id=""><br>
+        <input type="url" name="" id=""><br>
+        <input type="file" name="" id=""><br>
+        <button type="submit">로그인</button><br>
+    </form>
+    <!-- 버튼을 클릭하면 사용자가 입력한 정보(아이디, 패스워드)를 action에 있는 곳에 정보를 보낸다 -->
+</body>
+</html>

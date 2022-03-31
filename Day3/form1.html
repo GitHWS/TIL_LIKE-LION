@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form의 원리1</title>
+</head>
+<body>
+  <!-- action : 어디로 보낼꺼냐 -->
+  <!-- action에는 도달하는 주소를 적는데 안적으면 자기 자신 -->
+  <!-- method : 어떤 방식으로 보낼 거냐 -->
+  <form action="/form.html" method="get">
+
+    <!-- name속성을 써서 보내면 입력한 것이 주소에 쿼리스트링이 붙음 -->
+    <!-- http://127.0.0.1:5500/form.html?"userId=jj134&userPw=123" 쿼리스트링-->
+    <!-- 키userId=값jj134& 키userPw=값123 -->
+    <input type="text" name="userId">
+    <input type="password" name="userPw">
+    <!-- button의 속성 type의 디폴트는 submit! -->
+    <button type="submit">로그인</button>
+  </form>
+<!-- 버튼을 클릭하면 사용자가 입력한 정보(아이디, 패스워드)를 action에 있는 곳에 정보를 보내는거에요! -->
+
+</body>
+</html>
