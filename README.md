@@ -17,6 +17,6 @@
 <p>3/29. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day1">HTML Tag(Heading/Grouping/Sections), Web</a></p>
 <p>3/30. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day2">HTML Tag(Text-level Semantics/ Embedded Contents)</a></p>
 <p>3/31. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day3">HTML Tag(iframe/video/audio/forms/github)</a></p>
-<p>4/1. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day4">CSS basic(Make Profile/Challenge1)</a></p>
+<p>4/1. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day4">CSS basic with Veamcamp(Make Profile/Challenge1)</a></p>
 
 
