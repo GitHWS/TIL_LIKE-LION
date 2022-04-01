@@ -1,0 +1,72 @@
+body{
+  background-color: #ccc;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+li{
+  list-style: none;
+  cursor: pointer;
+}
+
+.pumpkin{
+  width:118px;
+  height:118px;
+  margin: 100px auto 30px;
+  transition: all 0.4s;
+  background-image: url(./images/icon-close.png);
+}
+
+.pumpkin:hover{
+  background-image: url(./images/icon-open.png);
+  transform: scale(2) rotate(360deg);
+}
+
+.bucket-list{
+  width:500px;
+  margin:0 auto;
+  background-color: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.title-box{
+  padding: 40px 0;
+  width:initial;
+  background-color: white;
+  color:orchid;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+.title{
+  padding-left:20px;
+  border-left: 5px solid orchid;
+}
+
+.list-items{
+  padding:30px;
+}
+
+.list-items>li{
+  margin-bottom: 20px;
+  padding:20px 30px;
+  background-color: white;
+  border-radius: 10px;
+  border: 3px solid transparent;
+  font-size:20px;
+  color:#777;
+  transition: all 0.4s;
+}
+
+.list-items .item:last-child{
+  margin-bottom: 0;
+}
+
+.list-items li:hover{
+  color:dodgerblue;
+  border: 3px solid dodgerblue;
+}
