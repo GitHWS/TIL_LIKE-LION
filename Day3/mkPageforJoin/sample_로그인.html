@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+      body{
+        color:#fff;
+        padding:100px;
+        background-color: #222;
+        overflow:hidden;
+      }
+
+      .wrapper{
+        width:800px;
+        margin: 0 auto;
+      }
+
+      h3{
+        width:inherit;
+        font-size:14px;    
+        text-align: left !important;
+      }
+
+      .screen_out{
+        width:0;
+        height:0;
+        overflow: hidden;
+        position: absolute;
+        text-indent: -9999px;
+      }
+
+      .header{
+        text-align: center;
+      }
+
+      .logo{
+        font-size:50px;
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .form-area{
+        width:500px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .fld_login{
+        padding:50px 0;
+      }
+
+      .fld_login > div {
+        margin-bottom: 20px;
+      }
+
+      .fld_login > div > h3{
+        margin-bottom: 10px;
+      }
+      
+      .input_userId,
+      .input_userPw,
+      .input_saveId{
+        width:300px;
+        margin: 0 auto;
+      }
+
+      .input_style{
+        width:inherit;
+        padding:10px;
+      }
+
+      .checkbox_saveId{
+        width:15px;
+        height:15px;
+        vertical-align: middle;
+        margin-bottom: 3px;
+        margin-right:5px;
+      }
+      
+      .btn_login{
+        width:300px;
+        padding: 10px;
+      }
+
+      .user-info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color:#777;
+      }
+      
+      .user-info a:hover{
+        color:#fff;
+        transition: all 0.3s;
+      }
+
+      .find-user-info{
+        display: flex;
+        gap:10px;
+      }
+
+      .find-user-info>li:last-child::before{
+        display: inline-block;
+        content:"|";
+        margin-right:10px;
+      }
+    </style>
+</head>
+<body>
+    <section class="wrapper">
+      <header class="header">
+        <img src="https://www.codelion.net/static/media/logo.4116ff5b.svg" alt="codelion logo">
+        <h1 class="logo">로그인</h1>
+      </header>
+      <section class="form-area">
+        <form id="login-form" action="" method="post">
+          <!-- fieldset은 기본적으로 "블록 레벨 요소"이다. -->
+          <fieldset class="fld_login">
+            <legend class="screen_out">로그인 페이지</legend>
+            <div class="input_userId input-box">
+              <h3>
+                <label for="userId" class="label-font">아이디</label> 
+              </h3>
+              <input type="text" name="userId" id="userId" class="input_style" required>
+            </div>
+            <div class="input_userPw input-box">
+              <h3>
+                <label for="userPw" class="label-font">비밀번호</label>
+              </h3>
+              <input type="password" name="userPw" id="userPw" class="input_style" required>
+            </div>
+            <div class="input_saveId input-box">
+              <input type="checkbox" id="saveId" class="checkbox_saveId">
+              <label for="saveId" class="label-font">로그인 상태 유지</label>
+            </div>
+            <button type="submit" class="btn_login">로그인</button>
+          </fieldset>
+        </form>
+      </section>
+      <section class="form-area">
+        <div class="user-info">
+          <a href="./sample_약관동의.html">
+            회원가입
+          </a>
+          <ul class="find-user-info">
+            <li><a href="#">아이디 찾기</a></li>
+            <li><a href="">비밀번호 찾기</a></li>
+          </ul>
+        </div>
+      </section>
+    </section>
+</body>
+</html>

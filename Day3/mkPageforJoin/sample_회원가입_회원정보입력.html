@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원정보입력</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+      body{
+        background-color: #222;
+        background-size: cover;
+        background-attachment: fixed;
+        color:#fff;
+        overflow: hidden;
+      }
+
+      h3{
+        width:inherit;
+        font-size:14px;    
+        text-align: left !important;
+      }
+
+      .wrapper{
+        width:500px;
+        margin: 50px auto;
+      }
+
+      .header{
+        text-align: center;
+      }
+
+      .logo{
+        font-size:50px;
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .form-area{
+        width:100%;
+      }
+
+      .fld_join-list{
+        width:300px;
+        margin:0 auto;
+      }
+
+      .label{
+        margin-bottom: 5px;
+      }
+
+      .fld_join-item{
+        width:inherit;
+        margin-bottom: 20px;
+      }
+
+      .input-style{
+        width:100%;
+        padding:10px 20px;
+      }
+
+      .bir-box{
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 5px;
+      }
+
+      .bir-box input{
+        width:inherit;
+        padding: 10px;
+      }
+
+      .select-month{
+        padding:10px;
+      }
+
+      .radio-area{
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        column-gap: 20px;
+      }
+
+      .nationalNum{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .select-nationalNum,
+      .extra-tel{
+        padding:10px;
+      }
+
+      .btn-join{
+        width:inherit;
+        padding:10px 20px;
+      }
+    </style>
+</head>
+<body>
+  <section class="wrapper">
+    <header class="header">
+      <img src="https://www.codelion.net/static/media/logo.4116ff5b.svg" alt="codelion logo">
+      <h1 class="logo">회원정보입력</h1>
+    </header>
+
+    <section class="form-area">
+      <form action="" method="post">
+        <fieldset class="fld_join">
+          <ul class="fld_join-list">
+            <li class="fld_join-item">
+              <h3 class="label">
+                <label for="userId">아이디</label>
+              </h3>
+                <input type="text" id="userId" class="input-style" required>
+            </li>
+            <li class="fld_join-item">
+              <h3 class="label">
+                <label for="userPw">비밀번호</label>
+              </h3 class="label">
+              <input type="password" id="userPw" class="input-style" required>
+            </li>
+            <li class="fld_join-item">
+              <h3 class="label">
+                <label for="confirmPw">비밀번호 재확인</label>
+              </h3>
+              <input type="password" id="confirmPw" class="input-style" required>
+            </li>
+            <li class="fld_join-item">
+              <h3 class="label">
+                <label for="userName">이름</label>
+              </h3>
+              <input type="password" id="userName" class="input-style" required>
+            </li>
+            <li class="fld_join-item">
+              <h3 class="label">
+                <label for="year">생년월일</label>
+              </h3>
+              <div class="bir-box">
+                <input type="number" id="year" placeholder="년(4자)" required>
+                <input type="number" id="month" placeholder="월" min="1" max="12" required>
+                <input type="number" id="date" placeholder="일" min="1" max="31" required>
+              </div>
+            </li>
+            <li class="fld_join-item">
+              <div class="gender">
+                <h3 class="label">
+                  <label for="birthday">성별</label>
+                </h3>
+                <div class="radio-area">
+                  <div class="gender-male">
+                    <input type="radio" id="gender-male" name="gender" required>
+                    <label for="gender-male">남</label>
+                  </div>
+                  <div class="gender-female">
+                    <input type="radio" id="gender-female" name="gender" required>
+                    <label for="gender-female">여</label>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="fld_join-item">
+              <h3 class="label">
+                <label for="nationalNum">전화번호</label>
+              </h3>
+              <div class="nationalNum">
+                <select name="nationalNum" class="select-nationalNum" id="nationalNum" class="select-nationalNum">
+                  <option value="+82" checked>대한민국 +82</option>
+                  <option value="+1" checked>미국/캐나다 +1</option>
+                  <option value="+61" checked>호주 +61</option>
+                  <option value="+33" checked>프랑스 +33</option>
+                </select>
+                <input type="tel" class="extra-tel" placeholder="전화번호 입력" maxlength="8" required>
+              </div>
+            </li>
+            <li class="fld_join-item">
+              <button class="btn-join">가입하기</a>
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </section>
+  </section>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>약관동의</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+      body{
+        background-color: #222;
+        background-size: cover;
+        background-attachment: fixed;
+        color:#fff;
+        overflow: hidden;
+      }
+      
+      label{
+        font-size:20px;
+        user-select:none;
+      }
+      
+      .wrapper{
+        width:800px;
+        margin: 50px auto;
+        /* background-color: red; */
+      }
+
+      .header{
+        text-align: center;
+      }
+
+      .logo{
+        font-size:50px;
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .terms{
+        width:inherit;
+        /* background-color: coral; */
+      }
+      
+      .term-box{
+        margin-bottom: 40px;
+      }
+
+      .term-checkbox{
+        margin-bottom:10px;
+      }
+
+      /* checkbox 사이즈 조절 */
+      .term-checkbox .checkbox-style{
+        width:16px;
+        height:16px;
+        margin-right:5px;
+      }
+
+      .term_userSelect{
+        margin-left:5px;
+        font-size:12px;
+      }
+      
+      .necessary{
+        color:rgb(247, 223, 4);
+      }
+
+      .choice{
+        color:#888;
+      }
+
+      .term-detail{
+        height:100px;
+        padding:20px;
+        border:1px solid #eee;
+        font-size: 12px;
+        line-height: 16px;
+        color:#eee;
+
+        /* 영역을 넘어가는 콘텐츠 스크롤 처리 */
+        overflow-y:scroll;
+      }
+
+      .term-detail h3{
+        color:#eee;
+        margin-bottom: 10px;
+      }
+
+      .term-detail p{
+        margin-bottom: 10px;
+      }
+
+      .term-detail-promotion{
+        border:none;
+        color: #eee;
+      }
+
+      .btns-box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap:10px;
+        text-align: center;
+      }
+
+      .btn{
+        width:50%;
+        border:1px solid #eee;
+        border-radius: 10px;
+        padding:10px 20px;
+        transition: all 0.3s;
+      }
+
+      .btn:hover{
+        background-color:#fff;
+        color:#222;
+      }
+    </style>
+</head>
+<body>
+  <section class="wrapper">
+    <header class="header">
+      <img src="https://www.codelion.net/static/media/logo.4116ff5b.svg" alt="codelion logo">
+      <h1 class="logo">약관동의</h1>
+    </header>
+
+    <section class="terms">
+      <ul class="term-box-list">
+        <li class="term-box">
+          <div class="term-checkbox">
+            <input type="checkbox" id="term-agree" class="checkbox-style" required>
+            <label for="term-agree">코드라이언 이용약관 동의<span class="term_userSelect necessary">(필수)</span></label>
+          </div>
+          <div class="term-detail">
+            <h3>Detail about agree</h3>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus sed, distinctio culpa quaerat ratione ullam dolorem neque officiis, illo recusandae ducimus repellendus quis aut. Porro dolorem eius illo fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus modi distinctio ipsa esse necessitatibus debitis voluptatibus omnis, voluptatem, pariatur nulla veritatis perspiciatis unde impedit illo. Modi vitae omnis architecto alias.
+            </p>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus sed, distinctio culpa quaerat ratione ullam dolorem neque officiis, illo recusandae ducimus repellendus quis aut. Porro dolorem eius illo fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus modi distinctio ipsa esse necessitatibus debitis voluptatibus omnis, voluptatem, pariatur nulla veritatis perspiciatis unde impedit illo. Modi vitae omnis architecto alias.
+            </p>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus sed, distinctio culpa quaerat ratione ullam dolorem neque officiis, illo recusandae ducimus repellendus quis aut. Porro dolorem eius illo fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus modi distinctio ipsa esse necessitatibus debitis voluptatibus omnis, voluptatem, pariatur nulla veritatis perspiciatis unde impedit illo. Modi vitae omnis architecto alias.
+            </p>
+          </div>
+        </li>
+
+        <li class="term-box">
+          <div class="term-checkbox">
+            <!-- checkbox에는 required 속성을 이용할 수 없어 자바스크립트를 사용해야하는 것 같다. -->
+            <input type="checkbox" id="term-privacy" class="checkbox-style">
+            <label for="term-privacy">개인정보 수집 및 이용 동의<span class="term_userSelect necessary">(필수)</span></label>
+          </div>
+          <div class="term-detail">
+            <h3>Detail about privacy</h3>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus sed, distinctio culpa quaerat ratione ullam dolorem neque officiis, illo recusandae ducimus repellendus quis aut. Porro dolorem eius illo fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus modi distinctio ipsa esse necessitatibus debitis voluptatibus omnis, voluptatem, pariatur nulla veritatis perspiciatis unde impedit illo. Modi vitae omnis architecto alias.
+            </p>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus sed, distinctio culpa quaerat ratione ullam dolorem neque officiis, illo recusandae ducimus repellendus quis aut. Porro dolorem eius illo fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus modi distinctio ipsa esse necessitatibus debitis voluptatibus omnis, voluptatem, pariatur nulla veritatis perspiciatis unde impedit illo. Modi vitae omnis architecto alias.
+            </p>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus sed, distinctio culpa quaerat ratione ullam dolorem neque officiis, illo recusandae ducimus repellendus quis aut. Porro dolorem eius illo fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus modi distinctio ipsa esse necessitatibus debitis voluptatibus omnis, voluptatem, pariatur nulla veritatis perspiciatis unde impedit illo. Modi vitae omnis architecto alias.
+            </p>
+          </div>
+        </li>
+
+        <li class="term-box">
+          <div class="term-checkbox">
+            <input type="checkbox" id="term-location" class="checkbox-style">
+            <label for="term-location">위치정보 이용약관 동의<span class="term_userSelect choice">(선택)</span></label>
+          </div>
+          <div class="term-detail">
+            <h3>Detail about location information</h3>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus sed, distinctio culpa quaerat ratione ullam dolorem neque officiis, illo recusandae ducimus repellendus quis aut. Porro dolorem eius illo fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus modi distinctio ipsa esse necessitatibus debitis voluptatibus omnis, voluptatem, pariatur nulla veritatis perspiciatis unde impedit illo. Modi vitae omnis architecto alias.
+            </p>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus sed, distinctio culpa quaerat ratione ullam dolorem neque officiis, illo recusandae ducimus repellendus quis aut. Porro dolorem eius illo fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus modi distinctio ipsa esse necessitatibus debitis voluptatibus omnis, voluptatem, pariatur nulla veritatis perspiciatis unde impedit illo. Modi vitae omnis architecto alias.
+            </p>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus sed, distinctio culpa quaerat ratione ullam dolorem neque officiis, illo recusandae ducimus repellendus quis aut. Porro dolorem eius illo fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus modi distinctio ipsa esse necessitatibus debitis voluptatibus omnis, voluptatem, pariatur nulla veritatis perspiciatis unde impedit illo. Modi vitae omnis architecto alias.
+            </p>
+          </div>
+        </li>
+
+        <li class="term-box">
+          <div class="term-checkbox">
+            <input type="checkbox" id="term-promotion" class="checkbox-style">
+            <label for="term-promotion">프로모션 정보 수신 동의<span class="term_userSelect choice">(선택)</span></label>
+          </div>
+          <div class="term-detail-promotion">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus sed, distinctio culpa quaerat ratione ullam dolorem neque officiis, illo recusandae ducimus repellendus quis aut. Porro dolorem eius illo fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus modi distinctio ipsa esse necessitatibus debitis voluptatibus omnis, voluptatem, pariatur nulla veritatis perspiciatis unde impedit illo. Modi vitae omnis architecto alias.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <div class="btns-box">
+      <a href="#" class="btn">
+        취소
+      </a>
+      <a href="./sample_회원가입_회원정보입력.html" class="btn">
+        확인
+      </a>
+    </div>
+  </section>
+</body>
+</html>
