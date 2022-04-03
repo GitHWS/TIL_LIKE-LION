@@ -18,7 +18,7 @@
 <p>3/30. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day2">HTML Tag(Text-level Semantics/ Embedded Contents)</a></p>
 <p>3/31. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day3">HTML Tag(iframe/video/audio/forms/github)</a></p>
 <p>4/1. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day4">CSS basic with Veamcamp(Make Profile/Challenge1)</a></p>
-<p>4/2. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day3/mkPageforJoin">finsh assignment about login page with forms</a></p>
+<p>4/2. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day3/mkPageforJoin">Finsh assignment about login page with forms</a></p>
 <p>4/3. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day4/profile">About Background Property</a></p>
 
 
