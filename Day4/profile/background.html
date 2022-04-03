@@ -23,17 +23,17 @@
         /* background-color: orange; */
         background-position: center;
         background-size: cover;
+        background-attachment: fixed;
+        /* background-repeat: repeat; */
+        
         /* 해결방안 background-attachment: fixed를 적용하게 되면 원래 기준이 body너머의 영역까지 적용이 되었는데 적용 후엔 "뷰포트"를 기준으로 적용이 된다. */
         /* 이 기준은 background-attachment 속성을 사용한 이후부터 나머지 background 속성들에게도 적용이 됨 */
-        background-attachment: fixed;
       }
 
       /* 잘 이해한 것인지 모르겠는데 body 이상의 상위 태그들이 배경색/배경이미지가 깔려있지 않으면 최하위(body)가 대신 배경을 꽉 채운다. */
     </style>
 </head>
 <body>
-    <!-- body 요소에 background-image를 설정했을 때 일어나는 일 -->
-
   행복
 </body>
 </html>
