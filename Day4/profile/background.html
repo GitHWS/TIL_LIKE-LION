@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-image</title>
+    <style>
+      html{
+        /* Q. 여기에 배경색을 깔아보면? */
+        /* body태그의 배경색을 제외한 나머지 영역은 아래의 배경색으로 채워진다. */
+        /* 이는 html 영역에 배경색이 채워지지 않고 투명 상태가 되며 우리가 인지하지 못하는 그 너머의 상위의 영역에 배경색이 적용됨 */
+        /* 이로써 현재 body태그의 상위에 배경색이 채워졌기 때문에 body는 원래의 본인 영역대로 배경색을 적용시킨다. */
+        /* 원래 html에는 관례상 배경색을 넣지 않고 대신 body에 넣는다. */
+        /* background-color: dodgerblue; */
+      }
+
+      body{
+        font-size:100px;
+        /* 현재 배경은 800*400의 이미지로 화면에 꽉 차지 않아서 반복되어 출력됨(경계면이 보기 좋지 않음) */
+        background-image: url(./images/cover.png);
+        /* body의 특별 취급 : body 너머의 영역(캔버스영역)까지 배경색을 채우자 */
+        /* background-color: orange; */
+        background-position: center;
+        background-size: cover;
+        /* 해결방안 background-attachment: fixed를 적용하게 되면 원래 기준이 body너머의 영역까지 적용이 되었는데 적용 후엔 "뷰포트"를 기준으로 적용이 된다. */
+        /* 이 기준은 background-attachment 속성을 사용한 이후부터 나머지 background 속성들에게도 적용이 됨 */
+        background-attachment: fixed;
+      }
+
+      /* 잘 이해한 것인지 모르겠는데 body 이상의 상위 태그들이 배경색/배경이미지가 깔려있지 않으면 최하위(body)가 대신 배경을 꽉 채운다. */
+    </style>
+</head>
+<body>
+    <!-- body 요소에 background-image를 설정했을 때 일어나는 일 -->
+
+  행복
+</body>
+</html>
