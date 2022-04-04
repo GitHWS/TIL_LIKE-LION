@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <!-- Forms -->
+
+    <!-- form : 사용자의 입력을 거쳐 데이터를 전송하는 태그 -->
+
+    <!-- form의 메서드 get 과 post
+
+    get 클라이언트가 서버를 불러서 요청사항을 말하는 것(많은 내용을 전달하지 못하고 누군가 볼 수 있다.)
+
+    post 클라이언트가 서버에 아무도 보지 못하게 보내는 것 -->
+
+    <!-- input(email/tel) -->
+
+    <form action="">
+      <!-- required 속성 : 필수로 입력해야할 사용자 입력을 의미하는 속성 -->
+      <input type="text" required>
+      <!-- tel =  -->
+      <input type="tel">
+      <!-- email = 이메일 형식을 갖춰야 서버에 전송이 됨 -->
+      <input type="email">
+      <!-- 출력은 차이가 없음, 근데 사용하는 이유는 올바른 데이터 입력을 사용자로부터 받기 위해 -->
+
+      <!-- label : input 태그를 설명하는 텍스트 태그, 하지만 따로 다른 태그를 사용하여 설명이 있다면 굳이 쓸 필요가 없다.
+      label의 for속성값과 input의 id의 값이 같아야함(연결)
+      -->
+
+      <!-- select -->
+
+
+      <!-- multiple 속성 : 은 사용자가 옵션을 복수로 선택할 수 있음(ctrl과 cmd) -->
+      <!-- size 속성 : 드롭다운 메뉴에서 최대로 표시하는 옵션의 수 -->
+      <select name="device" id="myDevice" size="1">
+        <!-- value 속성의 값을 반드시 넣어줘야 서버로 데이터를 전송 가능함, 콘텐츠는 출력만 될 뿐 전송하지 않음 -->
+        <!-- 선택을 하지 않고 서버로 전송 시 옵션의 가장 첫번째의 옵션의 value가 전송된다. -->
+        <!-- selected 속성 : 페이지가 로딩될 때 기본적으로 선택되어 있는 값을 설정 -->
+        <option value="0">선택</option>
+        <option value="애플">아이폰</option>
+        <option value="삼성" selected>갤럭시</option>
+        <option value="LG">LG</option>
+
+<!-- 사용자가 아무것도 선택하지 않았을 때 값을 전송하지 않으려면 value=""를 하면 된다. -->
+
+      </select>
+
+    </form>
+    
+    <form action="" method="post">
+      <!-- fieldset : form태그의 섹션, form태그에서 구역을 그룹화(구획화) 할 때 사용 , 기본적인 스타일이 있음(기본적인 스타일을 css로 제거가 가능하다), SEO에 영향을 주진 않는다? -->
+      <fieldset>
+        <!-- legend : fieldset 바로 뒤에 위치해야햠, fieldset의 heading(제목)의 역할 , SEO에 영향을 줌 -->
+        <legend>개인정보</legend>
+        <label for="myName">이름</label>
+        <!-- name 속성 : input에 필수, 서버로 보낼 때 name 속성이 키가 됨 -->
+        <!-- name : value 형태로 됨 -->
+        <input type="text" name="name" id="myName">
+        <label for="myTel">전화번호</label>
+        <input type="tel" name="tel" id="myTel">
+        <label for="myEmail">이메일</label>
+        <input type="email" name="email" id="myEmail">
+      </fieldset>
+      <fieldset>
+        <!-- type은 올바른 데이터 입력을 요구하기위해 id는 label과 연결하기 위해 name은 서버전송할때 key값으로 주기위해 맞나요? -->
+        <!-- name: 서버전송할때 사용자가 입력한 값을 명명
+
+value: 서버전송할때 사용자가 입력한 값 (미리 정해줌) -->
+        <legend>개인정보 제공 동의</legend>
+        <label for="checkAgree">개인정보 제공에 동의하십니까?</label>
+        <input type="checkbox" name="agree" id="checkAgree">
+      </fieldset>
+      <input type="submit">
+
+      <!-- button은 form 안에 있어야함, 바깥에 있으면 어떤 form의 데이터를 전송할지 모르기 때문에 안에 사용해야함 -->
+      <!-- button type 
+        submit = 서버로 데이터를 제출하는 타입, type을 설정하지 않을 시 기본값으로 설정됨(input type="submit"과 기능이 같음)
+        reset = input type="reset"과 같음. form의 모든 값 초기화
+      -->
+
+      <!-- input type="submit"과 button type="submit" 중 어떤 것을 써야할까?
+      
+      A. input은 닫힘 태그가 없어 안에 다른 콘텐츠 추가 불가(기본적으로 "제출"이라는 임의의 텍스트가 설정되 있음. 이것은 value로 바꿀 수 있음, 스타일도 부분적으로 적용이 되지만 한계가 있음)
+
+      하지만 button은 닫힘 태그가 있어 콘텐츠를(img 등) 추가 가능하다. 그래서 범용성이 높은 button을 사용하는 것이 좋다.
+      -->
+      <button type="submit">제출</button>
+
+
+      <!-- textarea : 여러 줄의 텍스트를 입력할 수 있는 태그-->
+
+      <textarea name="" id="" cols="10" rows="10"></textarea>
+      <!--
+          rows : 행의 개수, 입력줄 수(줄바꿈의 가능 횟수),문자의 평균적인 높이를 기준으로 하기 때문에 rows의 값과 다를 수 있음 
+          cols : 열의 개수, 입력창의 넓이(기본값 20), 문자의 평균적인 넓이를 기준으로 하기 때문에 cols의 값과 다를 수 있음 
+        -->
+      
+      <!-- datalist  -->
+
+      <!-- select와 input을 섞어서 사용할 수 있게 함, input의 list 속성을 이용해 datalist요소의 id속성을 연결하여 사용 -->
+      <!-- 선택하여 값을 받을 수도 있고 사용자가 임의로 작성할 수 있음 -->
+      <label for="solasystem">원하는 행성을 선택하세요 : </label>
+      <input type="text" id="solasystem" list="planets" name="planets">
+      <datalist id="planets">
+          <option value="수성">수성</option>
+          <option value="금성">금성</option>
+          <option value="지구">지구</option>
+          <option value="화성">화성</option>
+      </datalist>
+    </form>
+</body>
+</html>

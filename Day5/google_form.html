@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 태그를 이용한 설문조사 페이지</title>
+    <style>
+
+      *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+      }
+
+      body{
+        padding:100px 0;
+        background-color: rgb(236, 220, 253);
+      }
+
+      .wrapper{
+        width:700px;
+        margin: 0 auto;
+      }
+
+      header
+      ,fieldset{
+        margin-bottom:15px;
+        padding:30px;
+        border:1px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff;
+      }
+
+      .header{
+        border-top:10px solid rebeccapurple;
+      }
+
+      .title{
+        margin-bottom: 30px;
+        font-size:35px;
+        font-weight: 500;
+      }
+
+      .question{
+        margin-bottom: 30px;
+      }
+
+      .item{
+        display: flex;
+        align-items: center;
+      }
+
+      .item input{
+        margin-right:10px;
+      }
+
+      .item:not(:last-child){
+        margin-bottom: 20px;
+      }
+
+      .q2 input{
+        width:20px;
+        height:20px;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      }
+
+      .input_text{
+        padding:5px 0;
+        border:none;
+        box-shadow: 0 1px 0 0 #ccc;
+      }
+
+      .input_text.q3{
+        width:50%;
+      }
+
+      .input_text.q4{
+        width:100%;
+      }
+
+      .select_q5{
+        width:200px;
+        padding:10px;
+        color:#888;
+        border-color: #ccc;
+        border-radius: 5px;
+      }
+
+      .date_label,
+      .title_label{
+        font-size:14px;
+        color:#888;
+      }
+
+      .input_date{
+        margin-top:10px;
+        padding:5px;
+        border:none;
+        box-shadow: 0 1px 0 0 #ccc;
+      }
+      
+      .input_number{
+        width:35px;
+        height:35px;
+        margin-top:10px;
+        border:none;
+        box-shadow: 0 1px 0 0 #ccc;
+      }
+
+      .select_q6{
+        padding-right:10px;
+        border:none;
+      }
+
+      .btn-area{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .btn_submit,
+      .btn_reset{
+        padding:10px 25px;
+        border:none;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+
+      .btn_submit{
+        color:#fff;
+        border-radius: 3px;
+        background-color: rebeccapurple;
+      }
+
+      .btn_submit:hover{
+        background-color: rgb(124, 86, 163);
+      }
+      
+      .btn_reset{
+        color:blueviolet;
+        background-color: transparent;
+      }
+
+      .btn_reset:hover{
+        color: rebeccapurple;
+      }
+
+    </style>
+</head>
+<body>
+  <section class="wrapper">
+    <header class="header">
+      <h1 class="title">나와 잘 맞는 회사는?</h1>
+      <p>가고 싶은 회사에 대한 호감도를 조사합니다. 아이고 의미 없다.</p>
+    </header>
+    <main>
+    <form action="" method="post">
+      <!-- 질문 1 -->
+      <fieldset>
+        <p class="question">다음 문자중에 왠지 마음에 드는 것을 하나 고르세요.</p>
+        <div class="item q1">
+          <input type="radio" name="word" id="Question1_naver" value="네">
+          <label for="Question1_naver">네</label>
+        </div>
+        <div class="item">
+          <input type="radio" name="word" id="Question1_kakao" value="카">
+          <label for="Question1_kakao">카</label>
+        </div>
+        <div class="item">
+          <input type="radio" name="word" id="Question1_line" value="라">
+          <label for="Question1_line">라</label>
+        </div>
+        <div class="item">
+          <input type="radio" name="word" id="Question1_coopang" value="쿠">
+          <label for="Question1_coopang">쿠</label>
+        </div>
+        <div class="item">
+          <input type="radio" name="word" id="Question1_JCBC" value="베">
+          <label for="Question1_JCBC">베</label>
+        </div>
+      </fieldset>
+      <!-- 질문 2 -->
+      <fieldset>
+        <p class="question">친구와 문자를 합니다. 다음중 어떤 메신저를 이용하시겠습니까? 모두 골라주세요.</p>
+        <div class="item q2">
+          <input type="checkbox" name="word" id="Question2_kakao" value="네">
+          <label for="Question2_kakao">카카오톡</label>
+        </div>
+        <div class="item q2">
+          <input type="checkbox" name="word" id="Question2_line" value="네">
+          <label for="Question2_line">라인</label>
+        </div>
+        <div class="item q2">
+          <input type="checkbox" name="word" id="Question2_insta" value="네">
+          <label for="Question2_insta">인스타그램 디엠</label>
+        </div>
+        <div class="item q2">
+          <input type="checkbox" name="word" id="Question2_nateOn" value="네">
+          <label for="Question2_nateOn">네이트온</label>
+        </div>
+        <div class="item q2">
+          <input type="checkbox" name="word" id="Question2_budy" value="네">
+          <label for="Question2_budy">버디버디</label>
+        </div>
+      </fieldset>
+      <!-- 질문 3 -->
+      <fieldset>
+        <p class="question">면접에서 자신의 포부를 한 문장으로 얘기한다면?</p>
+        <input type="text" placeholder="내 답변" class="input_text q3">
+      </fieldset>
+      <!-- 질문 4 -->
+      <fieldset>
+        <p class="question">당신은 지금 한 기업의 최종면접을 앞두고 있습니다. 면접장에 들어가기 직전, 자기 자신에게 해주고 싶은 말은?</p>
+        <input type="text" placeholder="내 답변" class="input_text q4">
+      </fieldset>
+      <!-- 질문 5 -->
+      <fieldset>
+        <p class="question">다음 중 기술 면접때 듣고 싶은 질문이 아닌것은?</p>
+        <select name="job-interview" id="planets" class="select_q5">
+          <option value="">선택</option>
+          <option value="선택1">선택1</option>
+          <option value="선택2">선택2</option>
+          <option value="선택3">선택3</option>
+        </select>
+      </fieldset>
+      <!-- 질문 6 -->
+      <fieldset>
+        <p class="question">취업을 희망하는 날짜를 선택해주세요.</p>
+        <label for="date" class="date_label">날짜</label><br>
+        <input type="date" id="date" class="input_date">
+      </fieldset>
+      <!-- 질문 7 -->
+      <fieldset>
+        <p class="question">업무를 시작 하기에 가장 적당한 시간을 고르세요.</p>
+        <label for="time" class="title_label">시간</label><br>
+        <input type="number" class="input_number" min="0" max="12" maxlength="2">:<input type="number" class="input_number" min="00" max="59" maxlength="2">
+        <select name="time" id="planets" class="select_q6">
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </fieldset>
+      <div class="btn-area">
+        <button type="submit" class="btn_submit">제출</button>
+        <button type="reset" class="btn_reset">양식 지우기</button>
+      </div>
+    </form>
+  </main>
+  </section>
+</body>
+</html>
