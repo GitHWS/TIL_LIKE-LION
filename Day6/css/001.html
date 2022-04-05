@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내부 css, 외부 css, inline css</title>
+    <style>
+      /* 
+      selector{
+        property : value;
+      }
+      */
+
+      h1{
+        color:red;
+      }
+    </style>
+    <link href="001.css" rel="stylesheet">
+</head>
+<body>
+    <h1 style="color:green">hello World</h1>
+    <p>Hello world</p>
+
+    <!-- 결론 : 예외는 있지만 태그를 기준으로 가까우면 우선 적용이 됨!  -->
+
+    <!-- CSS 3는 없다, 2이후 부터는 기능단위인 module로 표현하기로 함, 이제 CSS라고 부르자-->
+</body>
+</html>
