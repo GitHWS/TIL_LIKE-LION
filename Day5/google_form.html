@@ -154,7 +154,7 @@
       <h1 class="title">나와 잘 맞는 회사는?</h1>
       <p>가고 싶은 회사에 대한 호감도를 조사합니다. 아이고 의미 없다.</p>
     </header>
-    <main>
+
     <form action="" method="post">
       
       <!-- 질문 1 -->
@@ -222,7 +222,7 @@
       <!-- 질문 5 -->
       <fieldset>
         <p class="question">다음 중 기술 면접때 듣고 싶은 질문이 아닌것은?</p>
-        <select name="job-interview" id="planets" class="select_q5" required>
+        <select name="job-interview" class="select_q5" required>
           <option value="" selected>선택</option>
           <option value="선택1">선택1</option>
           <option value="선택2">선택2</option>
@@ -241,10 +241,10 @@
       <fieldset>
         <p class="question">업무를 시작 하기에 가장 적당한 시간을 고르세요.</p>
         <label for="time" class="title_label">시간</label><br>
-        <input type="number" class="input_number" min="0" max="12" maxlength="2" required>
+        <input type="number" id="time" class="input_number" min="0" max="12" required>
         :
-        <input type="number" class="input_number" min="00" max="59" maxlength="2" required>
-        <select name="time" id="planets" class="select_q6">
+        <input type="number" class="input_number" min="00" max="59" required>
+        <select name="time" class="select_q6">
           <option value="AM">AM</option>
           <option value="PM">PM</option>
         </select>
@@ -256,7 +256,7 @@
       </div>
 
     </form>
-  </main>
+
   </section>
 </body>
 </html>
