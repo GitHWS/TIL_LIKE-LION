@@ -23,6 +23,8 @@
 <p>4/2. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day3/mkPageforJoin">Finsh assignment about login page with forms</a></p>
 <p>4/3. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day4/profile">About Background Property</a></p>
 <p>4/4. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day5">Finsh forms / Google form clone</a></p>
+<p>4/5. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day6">Finsh Tabular data & Block level vs Inline & About CSS</a></p>
+
 
 
 
