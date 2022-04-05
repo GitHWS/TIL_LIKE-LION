@@ -5,8 +5,203 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabular data</title>
+    <style>
+        th,tr,td{
+            border:1px solid #000;
+        }
+    </style>
 </head>
 <body>
+    <!-- table : 컨테이너 요소로서 테이블을 생성할 때 사용한다. -->
+
+    <!-- 
+        <table> -  컨테이너 요소로서 테이블을 생성할 때 사용한다. 테이블의 크기는 자식들의 크기에 따라 환산된다. tr의 집합체, 기본적으로 반응형
+            ** thead, tbody, tfoot를 사용하지 않을 때 tr만을 사용하여 작성해도 된다.
+        <caption>테이블의 제목</caption> - 웹접근성에 상관, 가운데 정렬이 기본
+
+        <thead> 머리글 - 구역별로 나누어야할 필요가 있다면 사용, 필수아님
+
+            <tr> - 테이블의 행을 생성한다
+                <th>table heading - 행/열의 머리말, 기본 스타일이 있음(굵은 글씨, 가운데 정렬)</th>
+            </tr>
+
+        </thead>
+
+        <tbody>본문 - 구역별로 나누어야할 필요가 있다면 사용, 필수아님
+
+            <tr>
+                <td>데이터 내용, 왼쪽 정렬</td>
+                <td>데이터 내용</td>
+                <td>데이터 내용</td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>바닥글 - 구역별로 나누어야할 필요가 있다면 사용, 필수아님, 주로 테이블의 결론(합계)에 많이 사용된다.
+            
+            <tr>
+                <td>데이터 내용, 왼쪽 정렬</td>
+                <td>데이터 내용</td>
+                <td>데이터 내용</td>
+            </tr>
+
+        </tfoot>
+
+        <colgroup>열을 묶는 태그</colgroup>
+    </table> -->
+
+
+
+
     
+    <!-- 병합 속성 : 헷갈림 주의 -->
+
+    <!-- colspan : 열간(가로방향) 병합 -->
+    <!-- rowspan="병합할 셀의 수": 행간(세로방향) 병합-->
+
+    <!-- 병합을 하려면 병합할 요소의 마지막 셀을 주석이나 제거를 해줘야 정상적으로 이루어짐, 안하면 병합할 마지막 요소가 뒤로 밀려남 -->
+
+    <!--  
+    <table>
+        <caption> 이달의 책 판매량 </caption>
+        <tr> - 넓이 높이 스타일을 줄 수 없음
+            <th>구분</th>
+            <th>이름</th>
+            <th>판매량</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>해리포터</td>
+            <td rowspan="2">100</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>해리포터2</td>
+        </tr>
+    </table>
+    -->
+
+    
+    <!-- colgroup, col : 테이블의 열에 공통적인 스타일을 주는 것으로 자주 사용 -->
+
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page Title</title>
+    <style>
+      /* table {
+        width: 100%;
+      } */
+
+      table,
+      tr,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .구분 {
+        width: 20%;
+      }
+      .이름 {
+        width: 50%;
+      }
+      .판매량 {
+        width: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        이 table은 영국에서 최초로 시작되어 일년에 한바퀴 돌면서...
+      </caption>
+
+      <!-- <colgroup> - td에 넓이를 지정하면 일정하게 되지 않는데 colgroup에 스타일 적용 시 잘 적용되기 떄문에 사용하는것을 권장
+        
+        각각의 col들은 현재 table의 각각의 열을 의미함
+        <col class="구분" /> 
+        <col class="이름" />
+        <col class="판매량" />
+
+      </colgroup> -->
+      
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>이름</th>
+          <th>판매량</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>해리포터</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>헝거게임</td>
+          <td>200</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>반지의제왕</td>
+          <td>300</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>총 판매량</td>
+          <td></td>
+          <td>600</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- scope = th요소에 scope 속성을 사용해 <td>와의 연결관계를 설정한다. 웹접근성 뿐만아니라 SEO, 데이터의 의미를 담을 수 있음) -->
+
+      <!-- 제목의 위치를 기준으로 데이터의 방향이 row인지 col인지 결정해야함 -->
+      <!-- 해당 제목에 데이터의 방향만을 설정하는 것 -->
+
+      <table>
+        <caption>요일별 급식 만족도</caption>
+        <tbody>
+          <tr>
+            <th></th>
+            <th scope="col">월요일</th>
+            <th scope="col">화요일</th>
+            <th scope="col">수요일</th>
+            <th scope="col">목요일</th>
+            <th scope="col">금요일</th>
+            <th scope="col">토요일</th>
+          </tr>      
+          <tr>
+            <th scope="row">메뉴</th>
+            <td>돈까스</td>
+            <td>짜장면</td>
+            <td>볶음밥</td>
+            <td>해물라면</td>
+            <td>잔치국수</td>
+            <td>떡볶이</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">만족도</th>
+            <td>3/5</td>
+            <td>4/5</td>
+            <td>1/5</td>
+            <td>5/5</td>
+            <td>2/5</td>
+            <td>3/5</td>
+          </tr>
+        </tfoot>
+      </table>
+
+  </body>
+</html>
+
 </body>
 </html>
