@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마진 겹침 현상</title>
+    <style>
+      /* div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+
+      .first {
+        margin-bottom: 30px;
+        background-color: red;
+      }
+
+      .second {
+        margin-top: 60px;
+        background-color: blue;
+      } */
+
+      /* 자식요소의 margin이 부모의 크기보다 더 커서 상쇄되었다. 해결방법은 overflow:hidden, display:inline-block, border 적용을 사용하면 된다.*/
+
+      .parent {
+        /* overflow: hidden; */
+        /* display: inline-block; */
+        border: 1px solid black;
+        margin-top: 50px;
+        height: 200px;
+        background-color: yellow;
+      }
+
+      .child {
+        width: 100px;
+        height: 100px;
+        margin-top: 100px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="first"></div>
+    <div class="second"></div> -->
+
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>

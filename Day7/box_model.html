@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>디스플레이 타입</title>
+    <style>
+      h1 {
+        width: 300px;
+        height: 100px;
+        padding: 30px 30px 30px 30px;
+        border: 3px solid black;
+        margin: 50px 50px 50px 50px;
+      }
+
+      /* 인라인 박스는 패딩과 보더는 적용이 가능하다. */
+      /* 아래의 속성은 위의 블록 박스의 영역을 침범한다. 그 이유는 인라인은 다른 요소를 밀어내지 않기 때문이다. */
+      strong {
+        border: 10px solid black;
+        padding: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>안녕하세요 여러분!!</h1>
+    <h1>안녕하세요 여러분!!</h1>
+    <strong>여러분은 강합니다!!</strong>
+    <strong>만나서 반가워요!!</strong>
+    <strong>배고파요 ㅠㅠ</strong>
+  </body>
+</html>

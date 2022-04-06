@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구체성의 원칙</title>
+    <style>
+      /* 한 선택자가 다른 선택자보다 더 구체적으로 작성되었다면 구체적인 선택자가 우선한다. */
+      p.color-red {
+        color: red;
+        font-size: 20px;
+      }
+
+      p {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      잡다한 지식 : 많이 쓰는 네이밍 컨벤션
+
+      python : snake : who_am_i
+      javascript : camel : whoAmI
+      html/css : 섞어서 사용
+    -->
+
+    <p class="color-red">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+      dolorem neque repellat! Fuga dignissimos sed odit assumenda. Vero quam
+      quas saepe hic, quod sed, eveniet earum ipsam sunt nam ipsum?
+    </p>
+  </body>
+</html>

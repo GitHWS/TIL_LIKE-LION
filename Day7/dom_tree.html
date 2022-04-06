@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM tree structure</title>
+</head>
+<body>
+    <h1>HELLO</h1>
+    <ul>
+      <li>List 1</li>
+      <li>List 2<span>Span</span></li>
+    </ul>
+      <div class="wrap">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <span>Have a good<em>Coding</em></span>
+    <!-- 1번 : Body의 child의 개수 : 4개, 콘솔창 document.body.childNodes 입력해보기(개행문자를 없애야함) -->
+    <!-- 2번 ul의 child의 개수 : 2개 -->
+    <!-- 3번 ul의 Decendent의 개수 : 1개 -->
+    <!-- 4번 div 태그 중에 3번째 child인 요소의 개수 : 2개 -->
+    <!-- 5번 ul Siblings인 요소의 개수 : 3개 -->
+    <!-- 6번 div:nth-child(3){color:red}하면 몇개의 div태그가 빨간 글씨가 될까요? :  -->
+    <!-- 7번 body > span{color:blue}하면 몇개의 span태그가 파란글씨가 될까요? :  -->
+
+</body>
+</html>
