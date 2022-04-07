@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>형제 연산자 이해하기</title>
+    <style>
+      .a + li {
+        background: red;
+      }
+
+      /* 조건이 성립하면 모두 적용하게 됨 */
+      /* Banana, Melon, Strawberry */
+      li + li + li {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Apple</li>
+      <li class="a">Mango</li>
+      <li class="b">Banana</li>
+      <li>Melon</li>
+      <li>Strawberry</li>
+    </ul>
+  </body>
+</html>

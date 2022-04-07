@@ -1,0 +1,47 @@
+!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      .container {
+        border: 1px solid black;
+        line-height: 1;
+      }
+      .one {
+        /* vertical-align: baseline;
+        vertical-align: sub;
+        vertical-align: super;
+        vertical-align: text-top;
+        vertical-align: text-bottom;
+        vertical-align: middle;
+        vertical-align: top;
+        vertical-align: bottom; */
+        font-size: 10px;
+      }
+      .two {
+        font-size: 20px;
+      }
+      .three {
+        font-size: 40px;
+      }
+      img {
+        vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 이미지 태그의 바깥쪽 여백을 없애기 위해 주로 사용 -->
+    <!-- 여백이 생기는 이유는 img태그는 인라인이기 때문에 베이스라인에 기준한다. 그래서 위쪽 여백이 생김 -->
+    <div class="container">
+      <sapn class="one">Lorem ipsum</sapn>
+      <sapn class="two">dolor sit amet</sapn>
+      <sapn class="three">consectetur adipisicing</sapn>
+    </div>
+    <div class="container">
+      <img
+        width="100px"
+        src="https://www.tvn-2.com/nacionales/Imagen-ilustrativa-gato-medio-bosque_18585331.jpg"
+        alt=""
+      />
+    </div>
+  </body>
+</html>
