@@ -1,0 +1,78 @@
+body {
+  background-color: #eae8fe;
+}
+
+.header {
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.logo img {
+  width: 380px;
+  vertical-align: top;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 750px;
+}
+
+.wrapper section {
+  width: 360px;
+}
+
+/* VENDING MACHINE */
+
+.vending_machine {
+  background-color: #fff;
+  padding: 25px;
+}
+
+.drinks_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.drinks_item img {
+  width: 36px;
+}
+
+.btn {
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 2px #999;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 0 0 0 3px #6327fe;
+}
+
+.drinks-img {
+  margin-bottom: 6px;
+}
+
+.drinks-title {
+  margin-bottom: 7px;
+  font-size: 12px;
+}
+
+.drinks-price {
+  padding: 5px 15px;
+  background-color: #6327fe;
+  border-radius: 50px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+/* STORAGE */
+
+.storage {
+  background-color: seagreen;
+}
