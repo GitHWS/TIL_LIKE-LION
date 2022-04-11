@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .one {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        top: 100px;
+        left: 100px;
+        border: 5px solid #000;
+      }
+
+      .two {
+        margin: auto;
+        /* margin: 0 auto; */
+        /* margin-left: auto; */
+        /* margin-right: auto; */
+        position: absolute;
+        /* right/left/top/bottom을 0한 이유는 div가 쓸 수 있는 영억을 전체로 적용시키는 역할을 한다.  */
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        width: 100px;
+        height: 100px;
+        background-color: dodgerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+      <div class="two"></div>
+    </div>
+  </body>
+</html>

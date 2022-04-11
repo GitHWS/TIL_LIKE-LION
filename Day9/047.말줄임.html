@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>말줄임</title>
+    <style>
+      div {
+        width: 200px;
+      }
+
+      p {
+        width: 500px;
+      }
+
+      p.a {
+        /* width로 크기를 지정하고 아래 속성을 입력하면 된다. */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      p.b {
+        overflow: hidden;
+
+        /* 자식요소들의 배치를 지정하는 속성입니다. flex의 예전 버전입니다. */
+        display: -webkit-box;
+
+        -webkit-line-clamp: 2; /*  블록 컨텐츠의 라인 수를 제한하는 속성입니다.*/
+
+        /* 자식요소들의 배치를 수직으로 만드는 속성입니다. flex-direction의 예전 버전입니다. */
+        -webkit-box-orient: vertical;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="a">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel omnis
+      excepturi tempora reiciendis incidunt sit sed quas deserunt, officiis
+      impedit. Nobis odit ipsa cupiditate doloribus aperiam minus! Illo, saepe
+      neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae
+      rerum est, eveniet corporis fugit minus quidem facere dolorum incidunt sit
+      temporibus obcaecati et consequatur esse nobis! Quia reiciendis eius
+      culpa.
+    </p>
+    <p class="b">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel omnis
+      excepturi tempora reiciendis incidunt sit sed quas deserunt, officiis
+      impedit. Nobis odit ipsa cupiditate doloribus aperiam minus! Illo, saepe
+      neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae
+      rerum est, eveniet corporis fugit minus quidem facere dolorum incidunt sit
+      temporibus obcaecati et consequatur esse nobis! Quia reiciendis eius
+      culpa.
+    </p>
+  </body>
+</html>
