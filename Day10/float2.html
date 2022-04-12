@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .wrap {
+        border: 4px solid blue;
+      }
+      .content {
+        margin: 5px;
+        height: 20px;
+        border: 2px solid green;
+      }
+
+      .content2 {
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 부모요소가 float이 적용된 자식요소를 인식하지 못해 높이가 부모의 높이만을 출력한다. 개발자 도구를 사용하여 블록 모델을 보라 -->
+    <!-- floating된 요소를 옆의 형제 요소가 인식하지 못한다. 그래서 플로팅이 적용된 요소가 옆의 형제 요소의 영역을 함께 차지한다. -->
+    <div class="wrap">
+      <div class="content content2">내용1</div>
+      <div class="content">내용2</div>
+    </div>
+
+    <!-- 대부분의 요소들, 블록 레벨 요소와 인라인 요소들은 normal flow 에 따라 레이아웃이 결정됩니다. 하지만 float, position(absolute, fixed) 의 방법을 사용하면 normal flow 에서 벗어나게 됩니다. normal flow에 속한 요소들은 normal flow에서 벗어난 float, position 속성이 적용된 요소들을 인식하지 못합니다. -->
+
+    <!-- float으로 인한 해결법
+    
+    1. 부모요소에 overflow:hidden(bfc 관련 속성 모두) - bfc영역을 생성하여 자식요소 인식(부모 요소가 자식을 인식해야할때 사용)
+    
+    2. 부모 요소의 높이 값을 직접 지정 - 좋은 방법은 아닙니다. 자식 요소의 높이가 변경 되었을 경우 혹은 자식 요소가 추가되어 부모 요소의 높이 수정이 불가피한 경우마다 부모의 높이를 변경해야 하므로 비효율적입니다.
+    
+    3. clear 속성을 정렬 방향에 따라 사용 https://developer.mozilla.org/ko/docs/Web/CSS/clear
+    : 순수하게 앞이나 뒤의 형제요소의 float을 해제하기 위해 나온 속성, 요소끼리 영역이 겹치지 않도록 함
+
+    근데 두번째요소가 첫번째요소를 침범하는데 왜 컨텐츠영역은 안겹칠까요..?
+    콘텐츠(텍스트)는 플로팅된 것을 알아보기 때문에 컨텐츠영역은 겹치지 않는다. 단지 콘텐츠를 가진 요소의 영역만 겹칠뿐
+
+    clear 속성은 형제만 알아볼 수 있게 함, 부모는 적용되지 않음
+
+    4. clear-fix(가상요소 사용)
+    : 가상요소 ::after를 생성하여 해결함. 속성으로 content:''; display:"block"; clear:both;가 있다.
+    가상요소는 기본적으로 인라인으로 블록 요소로 바꾸고 크기를 조절가능
+    -->
+  </body>
+</html>

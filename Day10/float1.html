@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        /* 원래 용도의 예시 */
+        width: 200px;
+        float: right; /* left / right를 대표적으로 사용 */
+      }
+
+      figure {
+        /* 수평으로 정렬하는 방법으로 사용되는 예 */
+        float: left;
+        margin: 0 10px;
+        background-color: royalblue;
+      }
+
+      div {
+        background-color: dodgerblue;
+      }
+
+      .fst {
+        background-color: sandybrown;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- float : 띄우다.라는 뜻, float 정렬은 다양한 객체를 띄워서 정렬하는 속성이다. 원래 그림을 따라 흐르는 텍스트 레이아웃을 웹에서 구현하기 위해 탄생한 속성이다. 
+    현재는 아래 코드와 같이 블록 박스 요소를 정렬하는 가장 기본적인 방법으로 사용한다.
+    -->
+
+    <!-- 원래 용도 -->
+    <div>
+      <img
+        src="https://t1.daumcdn.net/cfile/tistory/235B2F485958F12129"
+        alt=""
+      />
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, ad, autem
+      quaerat sed impedit cupiditate tenetur recusandae facere, alias ab nihil
+      nisi eligendi eaque ea molestiae dolore accusantium repellat maiores?
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere
+      perferendis porro fuga magni eligendi consequuntur qui tempore, dolorem
+      suscipit rerum eos esse quae aspernatur accusamus velit? Incidunt neque
+      unde earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+      voluptatem, in saepe iste aliquid laboriosam corrupti incidunt natus
+      nihil, nemo asperiores quis assumenda cupiditate ad quo eaque
+      voluptatibus, placeat tenetur?Lorem ipsum dolor sit, amet consectetur
+      adipisicing elit. Beatae, totam saepe harum non mollitia corporis tenetur
+      iure vel aliquam ex ducimus distinctio quos voluptatem ratione repudiandae
+      itaque incidunt cumque qui. Lorem ipsum, dolor sit amet consectetur
+      adipisicing elit. Nesciunt non deleniti adipisci repellendus sit quibusdam
+      quas error placeat tempora vitae voluptatibus, provident assumenda
+      consectetur, ab iure explicabo rerum quidem inventore! Lorem, ipsum dolor
+      sit amet consectetur adipisicing elit. Nesciunt, itaque totam ab ex
+      delectus reprehenderit dolore unde necessitatibus fugiat eos repellendus
+      quis quasi autem error, dignissimos impedit consequuntur ipsum explicabo?
+    </div>
+
+    <!-- 현재 용도 -->
+    <!-- 같은 결과로 인라인 블록도 가능하나 사이 여백(엔터라고 불리는 line-break로 인한)이 생긴다. -->
+    <!-- 해결법은 0px을 주는 것이나 내부 자식요소에 영향을 줄 수 있어 번거로워 진다. -->
+    <!-- float은 여백없이 붙이는 설질이 있다. -->
+    <figure>
+      <img src="https://via.placeholder.com/100" alt="" />
+      <figcaption>Lorem ipsum</figcaption>
+    </figure>
+    <figure>
+      <img src="https://via.placeholder.com/100" alt="" />
+      <figcaption>Lorem ipsum</figcaption>
+    </figure>
+    <figure>
+      <img src="https://via.placeholder.com/100" alt="" />
+      <figcaption>Lorem ipsum</figcaption>
+    </figure>
+
+    <!-- 블록레벨 : 가로폭 전체 영역을 차지 -->
+    <!-- 첫번째 요소에 float을 적용했을때 이 속성은 가지고 있는 콘텐츠 영역만큼만 가지는 성질을 가진다. div끼리 공간을 나눠가진다. -->
+
+    <div class="fst">first</div>
+    <div>second</div>
+  </body>
+</html>
