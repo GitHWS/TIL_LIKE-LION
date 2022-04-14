@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>flex-grow</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      .container {
+        display: flex;
+        height: 100vh;
+        /* flex-wrap: wrap; */
+      }
+
+      li {
+        flex-grow: 1;
+        /* basis가 auto면 알아서 여백이 적당하게 나눠가지는 것이고 0은 모든 아이템으 여백을 크기를 균등하게 초기화시킨다  */
+        /* flex-basis: auto; */
+        flex-basis: auto;
+        box-sizing: border-box;
+        height: 50px;
+        background-color: pink;
+        border: 1px solid black;
+      }
+
+      li:nth-child(2) {
+        flex-basis: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li>1 aaa aaaaaaaaaaa</li>
+      <li>2 bb</li>
+      <li>3 cccccccccccccccccc cc</li>
+    </ul>
+  </body>
+</html>

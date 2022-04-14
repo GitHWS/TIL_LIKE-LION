@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>flex-grow</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      .container {
+        display: flex;
+        height: 100vh;
+        /* flex-wrap: wrap; */
+      }
+
+      li {
+        /* 콘텐츠 영역을 제외한 여백 공간이 있으면 줄어든다. */
+        /* basis가 잡혀잇으면 width 사용하지 않아도 됨 */
+        /* flex:1 => flex-grow:1; flex-shrike:1; flex-basis:0; 모두 균등하게 width를 나눠서 영역 차지 */
+        /* 브라우저 크기가 줄어도 넓이는 줄어들지 않음, 스크롤 발생 */
+        /* flex: 0 0 100px; */
+        flex: 1 1 100px;
+
+        box-sizing: border-box;
+        height: 50px;
+        background-color: pink;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li>1 aaa</li>
+      <li>2 bb</li>
+      <li>3 cccccccccccccccccc cc</li>
+      <li>4 dd</li>
+      <li>5 e</li>
+      <li>6 f</li>
+      <li>1 aaa</li>
+      <li>2 bb</li>
+      <li>3 cccccccccccccccccc</li>
+      <li>4 dd</li>
+      <li>5 e</li>
+      <li>6 f</li>
+    </ul>
+  </body>
+</html>

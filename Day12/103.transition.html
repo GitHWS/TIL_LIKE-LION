@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>보강설명</title>
+    <title>Document</title>
     <style>
-      /* 1. body를 div로 바꿔보세요. */
-      body {
+      div {
+        background-color: blue;
+        width: 100px;
         height: 100px;
-        background-image: url("https://www.tvn-2.com/nacionales/Imagen-ilustrativa-gato-medio-bosque_18585331.jpg");
+        transition: width 0.3s;
+        /* 트렌지션의 지연시간 */
+        transition-delay: 3s;
       }
-      /* 2. 아래 주석을 풀어보세요. */
-      html {
-        background-color: red;
+
+      div:hover {
+        width: 150px;
       }
     </style>
   </head>

@@ -4,16 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>보강설명</title>
+    <title>Document</title>
     <style>
-      /* 1. body를 div로 바꿔보세요. */
-      body {
+      div {
+        margin: 100px;
+        width: 100px;
         height: 100px;
-        background-image: url("https://www.tvn-2.com/nacionales/Imagen-ilustrativa-gato-medio-bosque_18585331.jpg");
+        background-color: blue;
+        transition: all 1s;
+        /* 중심축 설정 속성 */
+        transform-origin: left;
       }
-      /* 2. 아래 주석을 풀어보세요. */
-      html {
-        background-color: red;
+
+      div:hover {
+        transform: rotate(90deg);
       }
     </style>
   </head>

@@ -1,4 +1,5 @@
 # TIL_LIKE-LION
+
 매일 멋사 프론트엔드 스쿨 2기의 기록들을 올립니다. 🦁
 
 &nbsp;
@@ -8,7 +9,7 @@
 
 &nbsp;
 
-<div align="left">
+<div text-align="left">
   <img alt="HTML5" src ="https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/>
   <img alt="CSS3" src ="https://img.shields.io/badge/CSS3-1572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/>
 </div>
@@ -25,12 +26,3 @@
 <p>4/4. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day5">Finsh forms / Google form clone</a></p>
 <p>4/5. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day6">Finsh Tabular data & Block level vs Inline & About CSS</a></p>
 <p>4/10. <a href="https://github.com/GitHWS/TIL_LIKE-LION/tree/main/Day6">Finsh Make calendar</a></p>
-
-
-
-
-
-
-
-
-
