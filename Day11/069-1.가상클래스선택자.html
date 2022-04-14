@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상클래스선택자</title>
+    <style>
+      .one {
+        background-color: red;
+        color: white;
+        width: 200px;
+        height: 100px;
+        transition: all 0.5s;
+      }
+
+      /* 존재하지 않는 클래스지만 마치 클래스가 있는 것처럼 작동한다고 하여 가상클래스선택자 */
+      /* 클래스가 생긴 것처럼 스타일이 적용됨 */
+
+      /* hover : 마우스를 오버했을 때 스타일을 적용하는 가상 선택자 */
+      .one:hover {
+        background-color: pink;
+        color: blueviolet;
+        width: 300px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="one">hello world</p>
+  </body>
+</html>

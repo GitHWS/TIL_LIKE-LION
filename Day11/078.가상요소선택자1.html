@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상 요소 선택자</title>
+    <style>
+      /* 가상 요소 선택자는 요소가 있는 것처럼 출력하는 선택자이다. */
+      /* 가상 요소 선택자는 사용자가 드래그로 선택할 수 없다. */
+      /* 스크린 리더가 읽을 수 있음(브라우저와 OS에 따라 스크린리더에 따라 가상요소 선택자를 읽을 수도 있고 읽지 않을 수도 있습니다. ie는 읽지않는다고 함) */
+      p::before {
+        content: "!!";
+      }
+
+      p::after {
+        content: " cm";
+      }
+    </style>
+  </head>
+  <body>
+    <p id="jun">10</p>
+  </body>
+</html>

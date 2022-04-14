@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 클래스명에 문자열 "paul"이 들어가기만 하면 선택 */
+      /* 공백을 넣으면 이 상태 그대로의 값을 포함하는 것만 선택한다. 고로 "paul "를 포함하는 "paul test"만 선택 */
+      p[class*="paul "] {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="paul">hello world</p>
+    <p class="paul test">hello world</p>
+    <p class="test paul">hello world</p>
+    <p class="paultest">hello world</p>
+    <p class="paullab">hello world</p>
+    <p class="koreapaullab">hello world</p>
+    <p class="koreaone paullab">hello world</p>
+    <p class="world">hello world</p>
+  </body>
+</html>
