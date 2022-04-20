@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Static Template</title>
+    <style>
+      /* 
+        부모쪽에 div1에 패딩탑 주석을 풀면 부모 높이가 부모너비의 반이되고
+.div(자식쪽) 태그 패딩탑의 주석을 푸니까
+자식의 높이가 부모 너비의 반이됬어요
+      */
+
+      .div1 {
+        background: black;
+        /* padding-top: 50%; */
+      }
+
+      .div2 {
+        width: 100px;
+        padding-top: 50%;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">
+      <div class="div2"></div>
+    </div>
+  </body>
+</html>

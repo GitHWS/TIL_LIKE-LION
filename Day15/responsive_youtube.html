@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 유튜브 동영상 - 한번 더 봐야할듯</title>
+    <style>
+      /* http://triki.net/prgm/1491 */
+      body {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .cont-video {
+        position: relative;
+        /* 종횡비 구현 : 이미지의 넓이를 조정해서 높이를 비율에 맞게 자동적으로 맞추는 것 */
+        /* 동영상의 넓이(= 지금 뷰포트 가로너비) : 동영상의 높이 (= padding-top) */
+        /* iframe의 여백이 padding-top으로 조정한다 생각 *
+        /* padding-top을 사용하는 이유가 height가 적용이 안되기 때문이다. */
+        /* padding-top/bottom은 높이가 적용되지 않았을 때 부모의 너비에 비례한다.  */
+        /* height: 56.25%; */
+
+        /* px을 주면 위아래, %는 부모의 넓이, 패딩탑,바텀을 퍼센트로 줬을때 그 퍼센트의 기준은 부모의 width기준 */
+        height: 56.25vw;
+      }
+
+      .video-next-level {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        /* 혼자 설정 시 넓이만 100%가 됨 */
+        width: 100%;
+
+        /* height:auto, 100%로 해도 높이를 잡아주지 않는다.  */
+        /* vh단위를 사용하면 늘어난다. */
+        /* height: 100vh; */
+        height: 100%;
+      }
+
+      /* 반응형처럼 된 것 같지만 리사이즈 시 상하 레터박스가 생김 */
+    </style>
+  </head>
+  <body>
+    <article class="cont-video">
+      <iframe
+        class="video-next-level"
+        src="https://www.youtube.com/embed/4TWR90KJl84?autoplay=1&mute=1&loop=1&playlist=4TWR90KJl84&controls=1"
+        title="YouTube video player"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </article>
+    <!-- Youtube에 정해진 규정대로 파라미터를 적용해야함 -->
+  </body>
+</html>
