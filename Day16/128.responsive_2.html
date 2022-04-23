@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        background-color: yellow;
+      }
+
+      .item {
+        width: 33.3333%;
+        padding: 1rem;
+        border: 1px solid black;
+        box-sizing: border-box;
+        background-color: burlywood;
+      }
+
+      /* max = 0~1000px까지, min = 1000px부터 0까지 라고 생각하면 쉽다. */
+      /* 만약 브레이크 포인트가 겹치면 가장 마지막에 작성된 미디어쿼리에 설정된 값이 적용된다. */
+      @media screen and (max-width: 1000px) {
+        .item-lg {
+          width: 50%;
+          background-color: dodgerblue;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .item-sm {
+          width: 100%;
+          background-color: tomato;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item-lg item-sm">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+        praesentium optio sint, rem doloremque sunt quos iusto. Maxime harum
+        autem necessitatibus eius repellendus labore pariatur nesciunt incidunt
+        aut, qui vitae.
+      </div>
+      <div class="item item-lg item-sm">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+        praesentium optio sint, rem doloremque sunt quos iusto. Maxime harum
+        autem necessitatibus eius repellendus labore pariatur nesciunt incidunt
+        aut, qui vitae.
+      </div>
+      <div class="item item-lg item-sm">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+        praesentium optio sint, rem doloremque sunt quos iusto. Maxime harum
+        autem necessitatibus eius repellendus labore pariatur nesciunt incidunt
+        aut, qui vitae.
+      </div>
+      <div class="item item-lg item-sm">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+        praesentium optio sint, rem doloremque sunt quos iusto. Maxime harum
+        autem necessitatibus eius repellendus labore pariatur nesciunt incidunt
+        aut, qui vitae.
+      </div>
+      <div class="item item-lg">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+        praesentium optio sint, rem doloremque sunt quos iusto. Maxime harum
+        autem necessitatibus eius repellendus labore pariatur nesciunt incidunt
+        aut, qui vitae.
+      </div>
+      <div class="item item-lg">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+        praesentium optio sint, rem doloremque sunt quos iusto. Maxime harum
+        autem necessitatibus eius repellendus labore pariatur nesciunt incidunt
+        aut, qui vitae.
+      </div>
+    </div>
+  </body>
+</html>
