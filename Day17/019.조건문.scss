@@ -1,0 +1,22 @@
+@mixin button($color) {
+  color: $color;
+  @if $color == black {
+    font-size: 32px;
+    background-color: white;
+  } @else if $color == white {
+    font-size: 24px;
+    background-color: black;
+  } @else {
+    font-size: 16px;
+    background-color: blue;
+  }
+}
+
+// 1. if 단독
+// 2. if/else
+// 3. if/else if/else
+// 4. if/else if/else if/else if.../else - 복수의 else if 사용
+
+.btn {
+  @include button(red);
+}

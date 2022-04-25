@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,IAAI,CAAC;EAGH,KAAK,EADG,GAAG;CAKZ;;AAHS,AAAA,MAAM,CAAC;EACb,KAAK,EAHC,GAAG;CAIV;;AAGH,AAAA,IAAI,CAAC;EAEH,KAAK,EAbC,IAAI;CAcX",
+    "sources": [
+        "009.변수의스코프.scss"
+    ],
+    "names": [],
+    "file": "009.변수의스코프.css"
+}

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*
+@mixin 이름(매개변수) //생성
+@include 이름(인수)  //사용
+*/
+.card {
+  width: 100px;
+  height: 100px;
+}
+
+.aside {
+  width: 100px;
+  height: 100px;
+}
+
+.one {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+/*# sourceMappingURL=013_mixin.css.map */

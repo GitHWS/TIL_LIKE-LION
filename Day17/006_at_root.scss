@@ -1,0 +1,11 @@
+// @at-root 부모의 영역 밖으로 나가는 것
+
+.one {
+  color: red;
+  .two {
+    color: blue;
+    @at-root.three {
+      color: green;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+// 한 줄 주석입니다. css는 한줄 주석을 지원하지 않기 때문에 컴파일 되지 않음
+/*
+  두 줄 주석입니다.
+*/
+
+// 네스팅(둥지)
+ul {
+  li {
+    color: red;
+    font-size: 10px;
+  }
+}
+
+.one {
+  color: red;
+  .two {
+    color: green;
+  }
+  .three {
+    color: blue;
+  }
+}

@@ -1,0 +1,12 @@
+// extend를 통해 스타일 모음을 만드는 것이다.
+
+%base-box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.box {
+  @extend %base-box;
+  border: 5px solid black;
+}

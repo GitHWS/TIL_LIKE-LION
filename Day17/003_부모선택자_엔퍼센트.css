@@ -1,0 +1,32 @@
+.box:focus {
+  border: 1px solid red;
+}
+
+.box:hover {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.box:active {
+  border: 1px solid green;
+}
+
+.box:first-child {
+  border: 1px solid blue;
+}
+
+.box:nth-child(2) {
+  border: 1px solid coral;
+}
+
+.box::after {
+  border: 1px solid sandybrown;
+}
+
+.box::before {
+  border: 1px solid darkcyan;
+}
+/*# sourceMappingURL=003_부모선택자_엔퍼센트.css.map */

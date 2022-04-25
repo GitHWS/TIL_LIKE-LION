@@ -1,0 +1,16 @@
+// 전역변수로 선언
+$value: blue;
+
+.one {
+  // 지역변수로 선언
+  $value: red;
+  color: $value;
+  @at-root.one-2 {
+    color: $value;
+  }
+}
+
+.two {
+  // 전역변수가 적용됨
+  color: $value;
+}

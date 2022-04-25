@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAQA,AANA,IAMI,CANM;EACR,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,GAAG;CACtB;;AAED,AAAA,IAAI,CAAC;EAEH,MAAM,EAAE,eAAe;CACxB",
+    "sources": [
+        "018.placeholder.scss"
+    ],
+    "names": [],
+    "file": "018.placeholder.css"
+}

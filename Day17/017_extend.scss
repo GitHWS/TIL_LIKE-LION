@@ -1,0 +1,11 @@
+.base-box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+// .base-box가 적용된 속성을 .box도 공통적으로 사용한다.
+.box {
+  @extend .base-box;
+  border: 5px solid black;
+}

@@ -1,0 +1,26 @@
+// 매개변수로 지정해서 사용 가능하다.
+
+/*
+@mixin 믹스인이름($매개변수A: 기본값, $매개변수B: 기본값) {
+  스타일;
+}
+
+@include 믹스인이름($매개변수B: 인수);
+
+중간 값을 기본값으로 할때는 "지정"을 해줘야함
+*/
+
+@mixin pri-button($width, $height, $radius: 10px) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+  background-color: aqua;
+}
+
+.btn {
+  @include pri-button(100px, 50px, 20px);
+}
+
+.btn2 {
+  @include pri-button(100px, 50px);
+}

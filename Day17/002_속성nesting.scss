@@ -1,0 +1,10 @@
+.add-icon {
+  background : {
+    image: url("./assets/arrow-right-solid.svg");
+    position: center center;
+    repeat: no-repeat;
+    size: 14px 14px;
+  }
+}
+
+// 컴파일된 css를 확인해보면 background속성이 nesting된 것을 볼 수 있다.

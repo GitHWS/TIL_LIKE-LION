@@ -1,0 +1,28 @@
+// 가상선택자도 nesting하여 선언할 수 있다.
+
+.box {
+  &:focus {
+    border: 1px solid red;
+  } // 가상선택자
+  &:hover {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    transition: all 0.5s;
+  }
+  &:active {
+    border: 1px solid green;
+  }
+  &:first-child {
+    border: 1px solid blue;
+  }
+  &:nth-child(2) {
+    border: 1px solid coral;
+  }
+  &::after {
+    border: 1px solid sandybrown;
+  } // 가상요소
+  &::before {
+    border: 1px solid darkcyan;
+  }
+}

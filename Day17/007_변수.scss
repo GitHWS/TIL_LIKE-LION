@@ -1,0 +1,17 @@
+// 변수를 사용하는 기준
+
+// 값이 두 번 이상 반복된다면 미리 변수로 사용
+// 기존의 값을 다른 값으로 변경해야할 경우, 변수의 값만 변경하면 되기 때문에 값이 수정될 가능성이 있다면 변수 생성을 고려
+// 하지만 개발자마다 사용하는 방식이 달라 개인적인 기준을 가지는 것이 좋다.
+
+$primary-color: #0044ff;
+$secondary-color: #00ff44;
+
+$primary-color: #ff0044;
+$txt-big: 32px;
+
+.one {
+  font-size: $txt-big;
+  color: $primary-color;
+  background-color: $secondary-color;
+}
