@@ -1,0 +1,23 @@
+// mixin과 다른 점 : return되는 값이 있음
+
+/* 형태
+@function 함수이름($매개변수) {
+  // 실행 코드
+  @return 값;
+}
+*/
+
+$number: "10px, 20px, 35px, 30px, 15px";
+
+@function pow($value) {
+  $value: ($value * $value);
+  @return $value + px;
+}
+
+.box {
+  // 함수의 인자로 10을 넣을 경우
+  width: pow(10);
+  // 최대값을 반환 = min 최소값도 있음
+  // https://paullabworkspace.notion.site/6-c7675a4034c543ee9c5f204500b2a6d1#839d184702cf41e987625470578795d9
+  height: max($number);
+}

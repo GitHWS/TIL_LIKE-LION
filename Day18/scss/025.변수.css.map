@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AASA,AAAA,EAAE,CAAC;EACD,SAAS,EARM,IAAI;EASnB,WAAW,EAND,GAAG;CAOd",
+    "sources": [
+        "025.변수.scss"
+    ],
+    "names": [],
+    "file": "025.변수.css"
+}

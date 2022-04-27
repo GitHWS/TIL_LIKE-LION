@@ -1,0 +1,11 @@
+// '코드 블록' 전체를 재사용을 위한 기능
+
+@mixin customButton($width, $height, $radius: 10px) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+}
+
+.btn {
+  @include customButton(100px, 30px);
+}

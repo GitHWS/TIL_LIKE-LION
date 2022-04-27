@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*
+.box {
+    &:focus{} // 가상선택자
+    &:hover{}
+    &:active{}
+    &:first-child{} 
+    &:nth-child(2){}
+    &::after{} // 가상요소
+    &::before{} 
+}
+*/
+.one {
+  color: red;
+}
+
+.one .two {
+  color: blue;
+}
+
+.three {
+  color: green;
+}
+
+.three:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.three-yellow {
+  background: #ff6347;
+}
+/*# sourceMappingURL=024.css.map */

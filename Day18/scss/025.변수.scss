@@ -1,0 +1,13 @@
+$bgColor: #fff;
+$font-h1: 32px;
+$font-size: 10px 12px 16px;
+$font-weight: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+
+h1 {
+  font-size: nth($font-size, 2);
+  font-weight: map-get($font-weight, "medium");
+}
