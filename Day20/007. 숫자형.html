@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="k">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Number 관련 함수
+      let n = 10000;
+      let nFloat = 10000.123123123;
+      let s = "10,000,000";
+
+      // `` 백틱 : 템플릿 리터럴, 문자열을 만들 수 있는 리터럴 방식, 주로 문자열 내 띄어쓰기와 변수값을 삽입할 때 사용
+      document.write(`n : ${n} <br>`);
+      // 숫자형.toLocaleString() -> 클라이언트에서 사용하는 형태로 바꿔주는 메서드(천 단위 , 추가)
+      document.write(`n.toLocaleString() : ${n.toLocaleString()} <br>`);
+      document.write(`s : ${s} <br>`);
+      // replace(a,b) = a를 b로 바꿔라 => /,/g는 정규표현식으로 global(전역)의 ,를 가리킨다.
+      // 즉 아래의 코드는 모든 ,를 ''로 바꿔라라는 의미
+      // 하지만 replace는 정규표현식이 아니면 전역으로 바꾸는 것을 지원하지 않는다.(처음 하나의 단어만 바꾼다.) 그래서 대신 replaceAll('a', 'b')를 사용하면 된다.
+      document.write(`s.replace(/,/g, '') : ${s.replace(/,/g, "")} <br>`);
+
+      // parseInt() 문자열을 정수형으로 바꿔주는 메서드, 하지만 중간에 문자형이 있다면 이후의 나오는 값은 제거하고 앞쪽만 출력해준다.
+      // parseInt("10,000,000") => 10, 첫번째 문자열인 쉼표 뒤로는 다 제거한다. 갑작스럽게 값이 변경되는 위험성이 있기 때문에 주의해야함
+      // 이 말은 즉슨 맨 앞에 문자열이 나오면 NaN을 반환함
+      // parseFloat()는 소수형 문자열을 숫자형 소수값으로 변경해줌
+      document.write(`parseInt(s, 10) : ${parseInt(s, 10)} <br>`);
+
+      // toFixed(n) : 소수점 자릿수를 n만큼으로 제한한다.
+      document.write(`n.toFixed(10) : ${n.toFixed(10)} <br>`);
+      document.write(`nFloat.toFixed(3) : ${nFloat.toFixed(3)} <br>`);
+
+      // Number(데이터) : 문자열이나 다른 값을 숫자형으로 변환
+      // 다만 Number는 생성자 함수이기 때문에 메서드로 문자열이나 다른 값을 숫자형으로 변환하는 용도로 맞지 않다. 대신에 parseInt나 parseFloat가 숫자형으로 변환하는데 최적화되어있기 때문에 사용하는 것이 좋다.
+      document.write(`Number(true) : ${Number(true)} <br>`);
+      document.write(`Number(false) : ${Number(false)} <br>`);
+      document.write(`Number('') : ${Number("")} <br>`);
+      document.write(`Number(' ') : ${Number(" ")} <br>`);
+      document.write(`Number('hello') : ${Number("hello")} <br>`);
+      document.write(`Number('10 20') : ${Number("10 20")} <br>`);
+      document.write(`Number('10     ') : ${Number("10     ")} <br>`);
+      document.write(`Number('     10') : ${Number("     10")} <br>`);
+      document.write(`Number('     10     ') : ${Number("     10     ")} <br>`);
+
+      // Math는 자바스크립트 내장 객체, 무조건 대문자 M으로 시작
+      // PI는 원주율 반환
+      document.write(`Math.PI : ${Math.PI} <br>`);
+      // round(n) 숫자 n을 반올림해주는 프로퍼티
+      // ceil(n) 올림 구하는 프로퍼티
+      // floor(n) 내림 구하는 프로퍼티
+      document.write(`Math.round(4.7) : ${Math.round(4.7)} <br>`);
+      // pow(n, m) n의 m승 구하는 프로퍼티
+      document.write(`Math.pow(2, 8) : ${Math.pow(2, 8)} <br>`);
+      // sqrt 스퀘어루트, 제곱근을 구하는 프로퍼티
+      document.write(`Math.sqrt(64) : ${Math.sqrt(64)} <br>`);
+      // abs 앱솔루트, 절대값으로 변환.
+      // 주로 길이/거리는 음수값이 없기 때문에 사용하는 메서드
+      document.write(`Math.abs(-5) : ${Math.abs(-5)} <br>`);
+      // random 난수, 0 ~ 0.999999999999999까지 랜덤한 값을 반환하는 메서드
+      document.write(`Math.random() : ${Math.random()} <br>`);
+      // max 최대값
+      document.write(
+        `Math.max(10, 20, 30, 40, 50) : ${Math.max(10, 20, 30, 40, 50)} <br>`
+      );
+      // min 최소값
+      document.write(
+        `Math.min(10, 20, 30, 40, 50) : ${Math.min(10, 20, 30, 40, 50)} <br>`
+      );
+    </script>
+  </body>
+</html>
