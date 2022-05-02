@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // boolean : true/false
+
+    let value1 = 30;
+    let value2 = 50;
+
+    console.log(value1 > value2);
+    console.log(value1 >= value2);
+    console.log(value1 < value2);
+    console.log(value1 <= value2);
+    console.log(value1 == value2);
+    console.log("-------------")
+
+    value1 = 30;
+    value2 = '30';
+    // == 값만 같으면 true
+    console.log(value1 == value2);
+    // === 데이터형과 값이 같으면 true, ==보다 빠르다.
+    console.log(value1 === value2);
+    console.log("-------------")
+
+    // != 값이 다르면 true, 같으면 false, 원래 값의 반대
+    console.log(value1 != value2);
+    // != 데이터형과 값이 다르면 true, 같으면 false, 원래 값의 반대
+    console.log(value1 !== value2);
+
+    // 부정 !
+    console.log(!value1); // false
+    
+    console.log(!!value2); // true, 많이 사용하기 때문에 중요
+  </script>
+</body>
+</html>
