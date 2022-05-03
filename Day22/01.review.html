@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 원시자료형은 값을 복사하여 값을 할당한다.
+
+      // 문자열은 인덱스[]를 통해 데이터에 접근을 할 수 있지만 데이터의 변경을 할 수 없다.
+      // 나는 문자열이 원시형이기 때문에 변경이 되지 않는다라고 생각했지만 그저 문자열의 특징이라고 하셨음
+
+      var str = "hello";
+
+      console.log(str[0]); // h, 인덱스를 통해 문자열 데이터의 접근이 가능
+
+      str[0] = "p"; // 문자열 첫번째 글자를 h에서 p를 바꿔보면?
+      console.log(str); // hello, 변경되지 않는다.
+
+      // 객체자료형(참조자료형) - 객체를 생성하여 값을 할당하고 그 값을 복제하면 “값 자체”를 복제하는 것이 아니라 그 값이 위치한 ‘주소’를 참조하여 복사합니다. 객체 자료형을 “참조 자료형”으로 부르는 이유도 이와 같습니다. 그래서 원본의 값이 바뀌면 그 값의 주소를 받는 변수도 값이 바뀐다.
+
+      var myObj = { name: "재현" };
+      var myObj2;
+
+      // myObj2에 myObj의 값의 주소를 복사한다.
+      myObj2 = myObj;
+      console.log(myObj2); // {name:"재현"}
+
+      // myObj의 키 name의 값을 "대표"로 바꾼다.
+      myObj.name = "대표";
+      console.log(myObj2); // {name:"대표"}
+
+      // 우리는 myObj2의 값을 직접적으로 컨트롤하지도 않았는데 값이 바뀐 이유는 값을 복사해서 할당하는 것이 아닌 그 값의 "주소"를 복사해서 넣는 것이다.
+
+      function double(num) {
+        // num 인수
+        // num * 2;
+        // 함수는 return이 없다면 undefined를 반환한다.
+        return num * 2;
+      }
+
+      double(5); // 5 매개변수(파라미터)
+      // 함수 호출만으로는 값의 사용이 어렵기 때문에 변수에 넣어서 사용한다.
+      var val = double(3);
+    </script>
+  </body>
+</html>

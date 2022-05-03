@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sort의 비교함수</title>
+  </head>
+  <body>
+    <script>
+      // 비교 함수(compareFunction)
+      // 자바스크립트의 내장함수에 '정해진' 기능임
+
+      var arrNum1 = [9, 3, 44, 13, 21];
+
+      arrNum1.sort(function (a, b) {
+        return a - b;
+      });
+
+      /* 버블정렬(참고)
+        9 - 3 = 값이 양수이기 때문에 b인 3이 앞으로 감
+        * 결과 [3, 9]
+        9 - 44 = 값이 음수이기 때문에 a인 9가 앞으로 감
+        * 결과 [3, 9, 44]
+        44 - 13 = 값이 양수이기 때문에 b인 13이 앞으로 감
+        * 결과 [3, 9, 13, 44]
+        44 - 21 = 값이 양수이기 때문에 b인 21이 앞으로 감
+        * 결과 [3, 9, 13, 21, 44]
+      */
+
+      // 로직
+
+      /*
+        arrNum.sort(function(a,b){
+          if(a<b){
+            return -1;
+          }
+          if(a>b){
+            return 1;
+          }
+          return 0;
+        })
+      */
+
+      // 역순 비교함수
+
+      var arrNum2 = [13, 9, 10, 2];
+      arrNum2.sort(function (a, b) {
+        return b - a;
+      });
+
+      /* 버블정렬(참고)
+        // 내림차순으로 정렬할 경우 (b - a)
+        9 - 13 == -4 --> 음수임으로 a인 13을 앞으로
+        10 - 9 == 1 --> 양수임으로 b인 10을 앞으로 [13, 10, 9, 2]
+        10 - 13 == -2 --> 음수임으로 a인 13을 앞으로
+        2 - 9 == -7 --> 음수임으로 a인 9를 앞으로 [13, 10, 9, 2]
+      */
+
+      // 로직
+
+      /*
+        arrNum.sort(function(a,b){
+          if(a>b){
+            return -1;
+          }
+          if(a<b){
+            return 1;
+          }
+          return 0;
+        })
+      */
+
+      // 문제
+
+      // 다음 배열에서 sort 함수를 이용해 원소의 product의 값을 기준으로 가나다순으로 정렬해보세요.
+
+      var studentList = [
+        {
+          id: 1,
+          product: "연필",
+          stock: 10,
+        },
+        {
+          id: 2,
+          product: "색종이",
+          stock: 33,
+        },
+        {
+          id: 3,
+          product: "체육복",
+          stock: 2,
+        },
+        {
+          id: 4,
+          product: "만연필",
+          stock: 0,
+        },
+      ];
+
+      studentList.sort(function (a, b) {
+        let productA = a.product;
+        let productB = b.product;
+
+        // 문자열의 경우 유니코드의 순서로 비교가 됨
+        if (productA < productB) {
+          return -1;
+        }
+        if (productA > productB) {
+          return 1;
+        }
+        return 0;
+      });
+
+      // 연필 - 색종이 => 색종이가 작으니 앞으로
+      // 연필 - 체육복 => 연필이 작으니 앞으로
+      // 체육복 - 만연필 => 만연필이 작으니 앞으로
+      // 연필 - 만연필 => 만연필이 작으니 앞으로
+      // 색종이 - 만연필 => 만연필이 작으니 앞으로
+
+      console.log(studentList);
+    </script>
+  </body>
+</html>

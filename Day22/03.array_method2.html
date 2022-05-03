@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>spline</title>
+  </head>
+  <body>
+    <script>
+      // splice() : 기존의 요소를 삭제하거나, 교체하거나, 새 요소를 추가합니다. 인덱스, 카운트, 아이템 순서로 인자를 전달. 선택된 대상요소는 "반환"된다.
+
+      // startIndex만 작성하면 startIndex부터 뒤의 모든 요소를 제거한다.
+
+      var arr = [1, 2, 3];
+      console.log(arr.splice()); // []
+      console.log(arr); // [1,2,3]
+
+      var avengers = ["spiderman", "ironman", "hulk", "thor"];
+      console.log(avengers);
+      // splice(startIndex, deleteCount) 삭제하는 것
+
+      avengers.splice(1, 1); // ["ironman"], 1번째 인덱스부터 1개의 요소를 삭제한 값을 반환
+      console.log(avengers);
+      avengers.splice(1, 2); // ["hulk", "thor"], 1번째 인덱스부터 2개의 요소를 삭제한 값을 반환
+      console.log(avengers);
+      avengers.splice(0, 2); // 만약 남은 요소가 1개인데 그 이상을 삭제한다면?
+      console.log(avengers); // 오류 없이 빈 배열을 []
+
+      // splice(startIndex, 0, "추가할 값") 추가하는 것
+
+      var avengers2 = ["spiderman", "ironman", "hulk", "thor"];
+      avengers2.splice(2, 0, "blackwidow"); // deleteCount에 0을 넣으면 요소를 추가한다.
+      console.log(avengers2); // ['spiderman', 'ironman', 'blackwidow', 'hulk', 'thor']
+      avengers2.splice(0, 0, "vision"); // deleteCount에 0을 넣으면 요소를 추가한다.
+      console.log(avengers2); // ['vision', 'spiderman', 'ironman', 'blackwidow', 'hulk', 'thor']
+
+      // splice(startIndex, deleteCount, 교체할 값) 기존 요소를 삭제하고 교체하는 것
+
+      var avengers3 = ["spiderman", "ironman", "hulk", "thor"];
+      avengers3.splice(1, 1, "wanda"); // 1번째부터 1개를 삭제하고 'wanda'를 추가
+      console.log(avengers3);
+      avengers3.splice(2, 1, "Dr.strange"); // 2번째부터 1개를 삭제하고 "Dr.strange"를 추가
+      console.log(avengers3);
+
+      // deleteCount는 음수값을 지원하지 않고 startIndex가 음수라면?
+      var avengers4 = ["spiderman", "ironman", "hulk", "thor"];
+      avengers4.splice(-1, 1); // 음수 인덱스는 역순으로 처리함, 즉 뒤에서 첫번째부터 1개에 해당하는 'thor' 삭제
+      console.log(avengers4); // ['spiderman', 'ironman', 'hulk']
+
+      //문제! 주어진 배열에 3가지 문제를 해결하라
+      var fish = ["정어리", "고등어", "돌고래", "참치", "고래상어", "코끼리"];
+      // 1. splice 를 이용해 코끼리를 제거해보세요
+      fish.splice(5, 1);
+      // 같은방법 fish.splice(-1, 1);
+      console.log(fish);
+
+      // 2. 참치 다음에 다금바리를 추가해보세요
+      fish.splice(4, 0, "다금바리");
+      console.log(fish);
+
+      // 3. 돌고래를 제거하고 옥돔과 갈치를 추가해보세요
+      fish.splice(2, 1, "옥돔", "갈치");
+      console.log(fish);
+    </script>
+  </body>
+</html>
