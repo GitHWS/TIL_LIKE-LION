@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 맨 앞에 추가/삭제(unshift/shift)와 맨 뒤에 추가/삭제(push/pop)하는 것은 반드시 기억하자!
+
+      // unshift() - 맨 앞의 요소를 추가할 때 사용
+      let cafe = ["coffee", "cake", "tea", "cookie"];
+      const count = cafe.unshift("bread");
+
+      console.log(count);
+      console.log(cafe);
+
+      // shift() - 맨 앞의 요소를 지울 때 사용
+      cafe = ["coffee", "cake", "tea", "cookie"];
+      const firstElement = cafe.shift();
+
+      console.log(firstElement);
+      console.log(cafe);
+    </script>
+  </body>
+</html>

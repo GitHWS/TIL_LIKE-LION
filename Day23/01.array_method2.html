@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // indexOf : 요소의 인덱스를 찾고 싶을 때 사용, 만약 요소가 존재하지 않으면 '-1'을 반환한다.
+
+      let cafe = ["coffee", "cake", "tea", "cookie"];
+
+      cafe.indexOf("tea");
+      //expected output: 2
+
+      cafe.indexOf("coffe", 1);
+      //expected output: -1
+
+      cafe.indexOf("bread");
+      //expected output: -1
+
+      // isArray : 배열인지 확인하고 싶을 때 사용
+
+      Array.isArray("coffee");
+      //expected output: false
+
+      Array.isArray(false);
+      //expected output: false
+
+      Array.isArray([1]);
+      //expected output: true
+
+      // join() : 요쇼들을 연결하여 하나의 문자열 값으로 만들 때 사용(구분자를 사이에 입력하는 메서드)
+
+      cafe.join();
+      console.log(cafe.join());
+
+      cafe.join("!!!");
+      console.log(cafe.join("!!!"));
+
+      // 전화번호 사이 구분자
+      let tel = ["010", "1234", "5678"];
+      tel.join("-");
+      console.log(tel.join("-"));
+
+      // fill(변경할 값, 시작인덱스, 종료인덱스) : 배열의 모든 요소를 매개변수로 변경하는 메서드, 원본을 변경하는 메소드
+
+      cafe = ["coffee", "cake", "tea", "cookie"];
+
+      cafe.fill("bread");
+      console.log(cafe); // 원본 배열이 바뀜
+      //expected output: ['bread', 'bread', 'bread', 'bread']
+
+      // 빈 배열을 채우는 방법
+      const newArr = new Array(10);
+      console.log(newArr); // 비어있음 * 10
+      console.log(newArr.fill(10)); // [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+
+      // 마이너스 인덱싱을 허용
+
+      let test = Array(10).fill(0);
+      test.fill("hello", -1);
+      console.log(test.fill("hello", -1)); // 시작인덱스가 -1이기 때문에 가장 뒤에서 첫번째 요소를 변경함. 종료 인덱스의 경우 현재 생략이 되어 기본값인 test.length가 적용
+
+      console.log(test.fill("bread", 2, 5)); // 인덱스 2번과 5번의 사이를 모두 변경
+
+      // flat() : 배열을 원하는 깊이로 평탄화하기 위한 메서드
+
+      let arr = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, [9, [10, 11]]],
+      ];
+
+      // 행렬의 한 차원을 평탄화한다.
+      console.log(arr.flat()); // [1, 2, 3, 4, 5, 6, 7, 8, [9, [10, 11]]
+
+      // include() : 특정요소가 포함되었는지 확인할 때 사용하는 메서드, 불리언값을 반환
+
+      cafe = ["coffee", "cake", "tea", "cookie"];
+
+      cafe.includes("bread");
+      //expected output: false
+
+      cafe.includes("cake");
+      //expected output: true
+
+      cafe.includes("cake", -3);
+      //expected output: true
+
+      // find() : 하나의 요소라도 조건을 만족하는 한개의 값을 확인할 때 사용하는 메서드, 조건에 만족하는 가장 처음의 하나의 값만 찾기 때문에 Array.prototype.filter() 보다 성능이 우수, 만약 조건에 만족하는 것이 없다면 undefined
+
+      arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      arr.find((i) => i > 5);
+      //expected output: 6
+
+      // filter() : 모든 요소가 조건을 만족하는지 확인할 때 사용
+
+      arr = [
+        {
+          name: "안녕1",
+          contents: "contents1",
+          dataNum: 1,
+        },
+        {
+          name: "안녕2",
+          contents: "contents2",
+          dataNum: 2,
+        },
+        {
+          name: "title3",
+          contents: "contents3",
+          dataNum: 3,
+        },
+        {
+          name: "title4",
+          contents: "contents4",
+          dataNum: 4,
+        },
+        {
+          name: "title5",
+          contents: "contents5",
+          dataNum: 5,
+        },
+      ];
+
+      console.log(arr.filter((i) => i.contents == "contents3"));
+      // includes를 함께 사용하면 컨텐츠에 포함된 것을 찾는데 좋다.
+      console.log(arr.filter((i) => i.name.includes("tit")));
+      console.log(arr.filter((i) => i.name.includes("안녕")));
+
+      console.log(arr.filter((i) => i.dataNum > 3));
+      //expected output:
+      /*
+      [
+        {
+          name: "title4",
+          contents: "contents4",
+          dataNum: 4,
+        },
+        {
+          name: "title5",
+          contents: "contents5",
+          dataNum: 5,
+        },
+      ];
+      */
+
+      arr = [
+        {
+          name: "안녕1",
+          contents: "프론트엔드1",
+          dataNum: 1,
+        },
+        {
+          name: "프론트엔드2",
+          contents: "contents2",
+          dataNum: 2,
+        },
+        {
+          name: "프론트엔드3",
+          contents: "프론트엔드3",
+          dataNum: 3,
+        },
+        {
+          name: "안녕4",
+          contents: "contents4",
+          dataNum: 4,
+        },
+        {
+          name: "title5",
+          contents: "contents5",
+          dataNum: 5,
+        },
+      ];
+
+      console.log(arr.filter((i) => i.name.includes("프론트")));
+      console.log(arr.filter((i) => i.contents.includes("프론트")));
+
+      // arr 3번째 요소가 name과 contents가 둘다 '프론트'가 들어가서 위의 명령의 값이 중복이 되는데 이때 filter는 중복된 요소를 제거하고 하나만 출력한다.
+
+      // findIndex() : 해당 조건에 만족하는 요소 중 가장 첫번째 인덱스를 반환해주는 메서드
+
+      cafe = [
+        {
+          item: "coffee",
+          amount: 5,
+        },
+        {
+          item: "cake",
+          amount: 4,
+        },
+        {
+          item: "tea",
+          amount: 7,
+        },
+        {
+          item: "cookie",
+          amount: 3,
+        },
+      ];
+
+      const index = cafe.findIndex((obj) => obj.item.length <= 3);
+
+      index;
+      //expected output: 2
+
+      // 가장 중요한 메서드 map() : 각각 요소에 함수를 호출할 때 사용하는 메서드, 함수를 모든 요소를 순회하여 값을 새로운 배열로 반환한다.
+
+      arr = [
+        {
+          name: "title1",
+          contents: "contents1",
+          dataNum: 1,
+          data: [1, 2, 3],
+        },
+        {
+          name: "title2",
+          contents: "contents2",
+          dataNum: 2,
+          data: [1, 2, 3],
+        },
+        {
+          name: "title3",
+          contents: "contents3",
+          dataNum: 3,
+          data: [1, 2, 100],
+        },
+        {
+          name: "title4",
+          contents: "contents4",
+          dataNum: 4,
+          data: [1, 2, 3],
+        },
+        {
+          name: "title5",
+          contents: "contents5",
+          dataNum: 5,
+          data: [1, 2, 100],
+        },
+      ];
+
+      console.log(arr.map((i) => i.name));
+      console.log(arr.map((i) => i.contents));
+      console.log(arr.map((i) => i.dataNum));
+      console.log(arr.map((i) => i.data));
+      console.log(arr.map((i) => i.data[2])); // 키 data가 배열인데 그 배열의 인덱스 2번째 것만 뽑아서 배열로 반환
+
+      console.log(arr); // 원본에 영향을 주지 않음
+
+      // 문제! 22년에 쓰여진 글은 몇 개인가?
+
+      arr = [
+        {
+          name: "title1",
+          contents: "contents1",
+          dataNum: 1,
+          지역과날짜: ["한국", [22, 5, 4]],
+        },
+        {
+          name: "title2",
+          contents: "contents2",
+          dataNum: 2,
+          지역과날짜: ["한국", [22, 5, 4]],
+        },
+        {
+          name: "title3",
+          contents: "contents3",
+          dataNum: 3,
+          지역과날짜: ["한국", [23, 5, 4]],
+        },
+        {
+          name: "title4",
+          contents: "contents4",
+          dataNum: 4,
+          지역과날짜: ["한국", [23, 5, 4]],
+        },
+        {
+          name: "title5",
+          contents: "contents5",
+          dataNum: 5,
+          지역과날짜: ["한국", [22, 5, 4]],
+        },
+      ];
+      console.log(arr.map((i) => i.지역과날짜[1][0]));
+      // map의 두번째 인수는 인덱스(MDN)
+      arr.map((value, index) => [index, value.contents]);
+
+      // fill 대신 사용
+
+      console.log(
+        Array(100)
+          .fill(0)
+          .map((_, index) => index)
+      );
+    </script>
+  </body>
+</html>

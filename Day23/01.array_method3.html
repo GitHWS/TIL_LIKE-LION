@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // forEach() : 각각의 요소를 실행하고 싶을 때 사용하는 매서드
+
+      let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      arr.forEach((i) => console.log(i));
+      // 1부터 10까지 요소를 순회하여 console.log를 실행해줌 - 반환은 따로 하지 않아서 그래서 무엇을 할 것인지 명시해줘야함
+
+      // forEach는 반환을 해주지 않기 때문에 아래처럼 변수를 push해서 사용해야한다.
+      let arr2 = [];
+      arr.forEach((i) => arr2.push(i + 20));
+      console.log(arr2);
+
+      // reduce() : 각 요소에 누적해주며 실행하고 싶을 때 사용하는 메서드
+
+      arr.reduce((누적값, 현재값) => 누적값 + 현재값);
+      console.log(arr.reduce((누적값, 현재값) => 누적값 + 현재값));
+      //expected output: 55
+
+      arr.reduce((누적값, 현재값, index, array) => 누적값 + 현재값);
+      console.log(
+        arr.reduce((누적값, 현재값, index, array) => 누적값 + 현재값)
+      );
+      //expected output: 55
+
+      arr.reduce((누적값, 현재값, index, array) => 누적값 - 현재값);
+      console.log(
+        arr.reduce((누적값, 현재값, index, array) => 누적값 - 현재값)
+      );
+      //expected output: -53
+
+      // from() : 유사 배열 객체를 배열로 만들 때 사용하는 메서드
+
+      // 유사 배열 객체
+      arr = {
+        0: 10,
+        1: 20,
+        2: 30,
+        3: 40,
+      };
+
+      console.log(arr[1]);
+      console.log(arr[2]);
+      console.log(arr.length); // 유사 배열 객체는 'length가 없음'
+      arr.length = 100; // 따로 적용시킬 수는 있음
+      console.log(arr);
+
+      // 배열에서의 length는 배열의 요소 수보다 크면 '비어있음'의 요소를 만들어 설정한 값만큼 채운다.
+      let 배열 = [1, 2, 3, 4];
+      배열.length = 100;
+      console.log(배열);
+
+      // from() : 유사 배열 객체를 배열로 만들 때 사용
+
+      console.log(Array.from("hello world", (x) => x + "!"));
+
+      // 실제 사용 예제
+      console.log(
+        Array.from(
+          [
+            {
+              _id: "6271fd40fe5c58d4cbd3a72f",
+              index: 0,
+              guid: "60f843d2-1b6b-4536-b421-e5df1c4ab735",
+              isActive: true,
+              balance: "$2,534.11",
+              picture: "http://placehold.it/32x32",
+              age: 27,
+              eyeColor: "brown",
+              name: "Miranda Nguyen",
+              gender: "male",
+              company: "ZENTIA",
+              email: "mirandanguyen@zentia.com",
+              phone: "+1 (833) 466-3207",
+              address: "198 Dank Court, Hartsville/Hartley, Indiana, 8416",
+              about:
+                "Consectetur proident anim do commodo ipsum. Elit consectetur irure dolore voluptate. Enim aute voluptate et qui do. Eu pariatur laboris labore esse enim reprehenderit mollit ullamco fugiat. Laborum sunt veniam consectetur laboris cupidatat. Lorem tempor occaecat labore ut et eiusmod amet.\r\n",
+              registered: "2021-06-16T11:50:54 -09:00",
+            },
+            {
+              _id: "6271fd40e30856d15651c60c",
+              index: 1,
+              guid: "ee647592-0647-4ad5-96b1-eb6c06a32dbd",
+              isActive: true,
+              balance: "$2,636.22",
+              picture: "http://placehold.it/32x32",
+              age: 35,
+              eyeColor: "blue",
+              name: "Florence Flynn",
+              gender: "female",
+              company: "ELENTRIX",
+              email: "florenceflynn@elentrix.com",
+              phone: "+1 (901) 525-3731",
+              address: "246 Billings Place, Brandermill, Guam, 5037",
+              about:
+                "Sint non dolore cupidatat voluptate laboris adipisicing eu quis. Laboris nostrud qui dolor cillum dolor nulla sint culpa est reprehenderit sint ipsum nisi excepteur. Qui cupidatat sint do aliquip ut. Officia est aliquip fugiat ex enim do sunt consequat.\r\n",
+              registered: "2014-12-10T08:44:47 -09:00",
+            },
+            {
+              _id: "6271fd404394e16d79143873",
+              index: 2,
+              guid: "3d3890ff-8241-4a2b-a361-789e0298817a",
+              isActive: false,
+              balance: "$1,047.32",
+              picture: "http://placehold.it/32x32",
+              age: 25,
+              eyeColor: "green",
+              name: "Debbie Pratt",
+              gender: "female",
+              company: "OPTIQUE",
+              email: "debbiepratt@optique.com",
+              phone: "+1 (831) 537-3188",
+              address: "737 Quentin Street, Calpine, Louisiana, 9102",
+              about:
+                "Officia nisi labore mollit cupidatat exercitation commodo duis adipisicing officia amet laborum. Nulla qui commodo aliqua reprehenderit dolore cupidatat esse ea pariatur sint ad dolore. Exercitation duis veniam velit occaecat est irure quis labore occaecat.\r\n",
+              registered: "2016-09-19T10:00:38 -09:00",
+            },
+          ],
+          (x) => [x.name, x.gender, x.email]
+        )
+      );
+
+      // concat() : 배열을 합치저간 새로운 요소를 추가할 때 사용하는 메서드, 원본에 영향을 주지 않는다. concat의 값을 사용하고 싶을 때 변수를 선언하여 할당해서 사용하면 된다.
+
+      cafe = ["coffee"];
+
+      cafe.concat(["cake"]);
+      //expected output: ['coffee', 'cake']
+      console.log(cafe);
+      let concat_cafe = cafe.concat(["cake"]);
+      console.log(concat_cafe);
+
+      cafe.concat(["tea"], "cookie"); // ["tea"]의 []를 없애고 concat함
+      //expected output: ['coffee', 'tea', 'cookie']
+      console.log(cafe);
+
+      // some() : 1개 이상의 요소가 조건에 맞는지 찾는 메서드, 불리언 형 값을 반환함
+
+      // every() : 모든 요소가 조건에 맞는지 찾을 때 사용하는 메서드
+    </script>
+  </body>
+</html>

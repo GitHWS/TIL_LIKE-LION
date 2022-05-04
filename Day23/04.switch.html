@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // switch문은 조건이 값으로 들어간다.
+      // 비교할게 10개 이하 정도일때 사용하면 좋다
+
+      switch (3) {
+        case 1:
+          console.log("hello1");
+          break;
+        case 2:
+          console.log("hello2");
+          break;
+        case 3:
+          console.log("hello3");
+          break;
+        default:
+          break;
+      }
+
+      let price = 0;
+      let menu = "카페라떼"; // 메뉴를 바꿔가면서 콘솔창에 입력해보자.
+
+      switch (menu) {
+        case "아메리카노":
+          price = 4000;
+          console.log(price);
+          break;
+        case "카페라떼":
+          price = 5000;
+          console.log(price);
+          break;
+        case "바닐라라떼":
+          price = 6000;
+          console.log(price);
+          break;
+        default:
+          console.log("메뉴를 정확히 입력하세요.");
+      }
+
+      // break문이 없다면 모두 출력
+      switch (menu) {
+        case "아메리카노":
+          price = 4000;
+          console.log(price);
+
+        case "카페라떼":
+          price = 5000;
+          console.log(price);
+
+        case "바닐라라떼":
+          price = 6000;
+          console.log(price);
+
+        default:
+          console.log("메뉴를 정확히 입력하세요.");
+      }
+
+      // 요일을 구할 때
+      let date = new Date();
+      console.log(date);
+
+      switch (date.getDate()) {
+        case 1:
+          console.log("월");
+          break;
+        case 2:
+          console.log("화");
+          break;
+        case 3:
+          console.log("수");
+          break;
+        case 4:
+          console.log("목");
+          break;
+        case 5:
+          console.log("금");
+          break;
+        case 6:
+          console.log("토");
+          break;
+        case 7:
+          console.log("일");
+          break;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 할당 연산
+      let x = 2;
+      // x++ 할당 후 연산
+      console.log(x);
+      console.log(x++);
+      console.log(x);
+      // ++x 연산 후 할당
+      let y = 2;
+      console.log(y);
+      console.log(++y);
+      console.log(y);
+
+      // 논리연산
+      /*
+      and = 곱
+      or = 합
+
+      true = 1
+      false = 0
+      */
+
+      // 문제
+      // 100 이내의 범위의 모든 3의 배수 5의 배수의 합을 구하라
+      let s = 0;
+      Array(100)
+        .fill(0)
+        .map((_, index) => index)
+        .filter((i) => i % 3 == 0 || i % 5 == 0)
+        .forEach((x) => (s += x));
+    </script>
+  </body>
+</html>
