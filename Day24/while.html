@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let i = 1;
+      while (i < 10) {
+        console.log(`2 * ${i} = ${2 * i}`);
+        i++;
+      }
+
+      // 0부터 101까지 짝수를 모두 더하라
+
+      i = 0;
+      let evenSum = 0;
+
+      while (i <= 101) {
+        evenSum += i;
+        i += 2;
+      }
+
+      console.log(evenSum);
+
+      // do...while - do의 명령문을 무조건 먼저 실행 후 while의 조건문을 만족하는 만큼 다시 반복
+      sum = 0;
+      i = 0;
+      do {
+        i++;
+        sum += i;
+        console.log("hello world");
+      } while (i < 5);
+
+      console.log(sum);
+
+      // while문으로 구구단
+
+      i = 2;
+      j = 1;
+      while (i < 10) {
+        while (j < 10) {
+          console.log(`${i} X ${j} = ${i * j}`);
+          j++;
+        }
+        j = 1;
+        i++;
+      }
+
+      // for문의 레이블 : 어디로 갈지 지정을 하는 역할, 실무에선 사용하지 않을 것임
+
+      timestable: for (let x = 2; x < 10; x++) {
+        for (let y = 1; y < 10; y++) {
+          if (x === 4) break timestable;
+          console.log(`${x} X ${y} = ${x * y}`);
+        }
+      }
+
+      for (let x = 2; x < 10; x++) {
+        test: for (let y = 1; y < 10; y++) {
+          if (x === 4) break test;
+          console.log(`${x} X ${y} = ${x * y}`);
+        }
+      }
+    </script>
+  </body>
+</html>

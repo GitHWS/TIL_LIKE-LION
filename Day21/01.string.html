@@ -12,44 +12,47 @@
 
       let txt = "ABCDEFGHIJKLMNABC";
       // 이스케이프 문자(백슬러쉬)는 프리티어를 꺼줘야 나옴
-      let text_two = "mom said \'hello world\'";
-      let text_three = "mom said 'hello world'"
+      let text_two = "mom said 'hello world'";
+      let text_three = "mom said 'hello world'";
 
-      // .length : 숫자의 길이를 구하고 싶다면 내장함수 
-      document.write(`txt.length : ${txt.length}`, '<br>');
-      document.write(`txt[1] : ${txt[1]}`, '<br>')
+      // .length : 숫자의 길이를 구하고 싶다면 내장함수
+      document.write(`txt.length : ${txt.length}`, "<br>");
+      document.write(`txt[1] : ${txt[1]}`, "<br>");
       // indexOf("string") : string이 몇 번째에 있는지 인덱스를 반환
-      document.write(txt.indexOf("F"), '<br>');
-      document.write(`txt.indexOf("F") : ${txt.indexOf("F")}`, '<br>');
+      document.write(txt.indexOf("F"), "<br>");
+      document.write(`txt.indexOf("F") : ${txt.indexOf("F")}`, "<br>");
       // search("string") : string이 몇 번째에 있는지 인덱스를 반환
-      document.write(`txt.search("F") : ${txt.search("F")}`, '<br><br>');
+      document.write(`txt.search("F") : ${txt.search("F")}`, "<br><br>");
 
       // search와 indexOf 차이(indexOf는 정규표현식을 허용하지 않는다.)
       // 둘다 첫번째 문자인 "F"의 인덱스 넘버를 출력한다.
-      document.write(`txt.indexOf("FG") : ${txt.indexOf("FG")}`, '<br>');
-      document.write(`txt.search("FG") : ${txt.search("FG")}`, '<br><br>');
+      document.write(`txt.indexOf("FG") : ${txt.indexOf("FG")}`, "<br>");
+      document.write(`txt.search("FG") : ${txt.search("FG")}`, "<br><br>");
       // 없는 것을 찾을때는 -1 반환
-      document.write(`txt.indexOf("Z") : ${txt.indexOf("Z")}`, '<br>');
-      document.write(`txt.search("Z") : ${txt.search("Z")}`, '<br><br>');
+      document.write(`txt.indexOf("Z") : ${txt.indexOf("Z")}`, "<br>");
+      document.write(`txt.search("Z") : ${txt.search("Z")}`, "<br><br>");
 
       // 정규표현식을 통한 search와 indexOf 차이
       let regExp = /CD/;
-      document.write(`txt.indexOf(regExp) : ${txt.indexOf(regExp)}`,'<br>');
-      document.write(`txt.search(regExp) : ${txt.search(regExp)}`,'<br><br>');
-      
+      document.write(`txt.indexOf(regExp) : ${txt.indexOf(regExp)}`, "<br>");
+      document.write(`txt.search(regExp) : ${txt.search(regExp)}`, "<br><br>");
+
       // lastIndexOf("string") : 해당하는 문자의 가장 마지막에 인덱스를 반환
       document.write(`txt.lastIndexOf("F") : ${txt.lastIndexOf("F")} `, `<br>`);
       document.write(`txt.lastIndexOf("B") : ${txt.lastIndexOf("B")} `, `<br>`);
-      document.write(`txt.lastIndexOf("FGH") : ${txt.lastIndexOf("FGH")} `, `<br><br>`);
+      document.write(
+        `txt.lastIndexOf("FGH") : ${txt.lastIndexOf("FGH")} `,
+        `<br><br>`
+      );
 
       // slice(시작인덱스 n, 종료인덱스 m) : 인덱스 n번째부터 인덱스 m번째 전까지 문자열을 잘라서 반환
-      document.write(`txt.slice(0,3) : ${txt.slice(0,3)}`, '<br>')
-      
+      document.write(`txt.slice(0,3) : ${txt.slice(0, 3)}`, "<br>");
+
       // substring(시작인덱스 n, 종료인덱스 m) :
-      document.write(`txt.substring(0,3) : ${txt.substring(0,3)}`, '<br>')
+      document.write(`txt.substring(0,3) : ${txt.substring(0, 3)}`, "<br>");
 
       // substr(시작인덱스 n, 종료인덱스 m) : 시작인덱스부터 길이만큼 반환
-      document.write(`txt.substr(0,3) : ${txt.substr(0,3)}`, '<br><br>')
+      document.write(`txt.substr(0,3) : ${txt.substr(0, 3)}`, "<br><br>");
 
       // string.replace("string", "변경할 string") : 매개변수 string를 변경할 string 매개변수로 변경한다.
       document.write(txt.replace("ABC", "hojun"), "<br>");
@@ -61,39 +64,42 @@
       document.write(txt.replace(regExp3, "hojun"), "<br><br>");
 
       // .includes("찾을 문자") : 찾는 문자가 있는지 확인하고 불리언 값으로 반환
-      document.write(txt.includes("Z"),"<br>");
-      document.write(txt.includes("BC"),"<br>");
+      document.write(txt.includes("Z"), "<br>");
+      document.write(txt.includes("BC"), "<br>");
 
-      document.write("<br><hr><br>")
+      document.write("<br><hr><br>");
 
       // toUpperCase(), toLowerCase();
 
-    
       // -----------------------------------
       let number = "100";
-      let number_two = "1dsadlsakl"
-      document.write(number + number, '<br>')
-      document.write(Number(number) + Number(number), '<br>');
+      let number_two = "1dsadlsakl";
+      document.write(number + number, "<br>");
+      document.write(Number(number) + Number(number), "<br>");
       // 안정성 때문에 parseInt를 사용한다.
-      document.write(parseInt(number) + parseInt(number), '<br>');
+      document.write(parseInt(number) + parseInt(number), "<br>");
       // 안정성을 보려면 아래의 2줄 결과를 비교하면 된다.
-      document.write(Number(number_two) + Number(number_two), '<br>');
-      document.write(parseInt(number_two) + parseInt(number_two), '<br>');
+      document.write(Number(number_two) + Number(number_two), "<br>");
+      document.write(parseInt(number_two) + parseInt(number_two), "<br>");
       // 형변환 트릭, 변수 앞에 +를 쓰면 숫자형으로 변환된다.
-      document.write(+number + +number, '<br>');
+      document.write(+number + +number, "<br>");
 
       // 템플릿 리터럴 : IE는 지원하지 않는다. 그래서 따로따로 사용해야함
-      document.write(`txt : ${txt}`, '<br>');
+      document.write(`txt : ${txt}`, "<br>");
       // 만약 IE에서 작업한다면
-      document.write(number + " + " + number + " = " + (parseInt(number)+ parseInt(number)), '<br>')
+      document.write(
+        number + " + " + number + " = " + (parseInt(number) + parseInt(number)),
+        "<br>"
+      );
 
       // 문제 100 + 100 = 200을 출력해봐라
-      document.write(`${number} + ${number} = ${parseInt(number)+parseInt(number)}`, '<br>')
+      document.write(
+        `${number} + ${number} = ${parseInt(number) + parseInt(number)}`,
+        "<br>"
+      );
 
       // 자바스크립트는 문맥상 판단하여 문자형 * 숫자형을 곱해준다.
-      document.write(`${number*2}`, typeof(number*2), '<br>');
-
-      
+      document.write(`${number * 2}`, typeof (number * 2), "<br>");
     </script>
   </body>
 </html>
