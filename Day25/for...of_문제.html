@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // for...of문을 이용해서 요소의 자릿수를 더하고 요소의 합 구하기
+      let arr = [15, 22, 33, 111, 2];
+
+      let sum = 0;
+      for (let i of arr) {
+        // ""를 더하면 문자열로 형변환
+        let s = "" + i;
+        // 문자열을 한 글자씩 분해해서 배열로 만들고
+        for (let j of s.split("")) {
+          // 분해된 요소가 문자열이기 때문에 형변환을 위해 +를 사용하고 하나씩 순회하여 sum에 더해준다.
+          sum += +j;
+        }
+      }
+
+      console.log(sum);
+
+      // 다른 방법 : 메서드 체이닝
+      console.log(
+        arr
+          .map((x) => "" + x)
+          .join()
+          .replaceAll(",", "")
+          .split("")
+          .reduce((a, b) => +a + +b)
+      );
+
+      // for...of 다른 방법
+
+      sum1 = 0;
+      for (let i of arr) {
+        ("" + i).split("").forEach((x) => (sum1 += +x));
+      }
+
+      console.log(sum1);
+
+      // 베스트 코드
+
+      var str = [15, 22, 33, 111, 2].join("");
+      let result = 0;
+      for (let i = 0; i < str.length; i++) {
+        result += parseInt(str[i], 10);
+      }
+
+      console.log(result);
+    </script>
+  </body>
+</html>

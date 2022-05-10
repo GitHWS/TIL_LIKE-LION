@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Date는 사용자의 설정이 아닌 브라우저의 위치/시간 정보에 따라 다르게 나옴
+      // Date의 사용의 예 : 시간에 따른 '다크 모드' 사용
+      let d = new Date();
+      console.log(d);
+
+      // 년
+      console.log(d.getFullYear());
+
+      // 1900년부터 현재 년도까지의 차 - 사용하지 않는 것
+      console.log(d.getYear());
+
+      // 월(0월부터)
+      console.log(d.getMonth() + 1);
+
+      // 날짜 (1일부터)
+      console.log(d.getDate());
+
+      // 요일(0부터) - 0(일요일)부터
+      console.log(d.getDay());
+
+      // 시/분/초 = 갱신되는 정보가 아니기 때문에 사용자가 갱신하게 해야함
+      console.log(d.getHours());
+      console.log(d.getMinutes());
+      console.log(d.getSeconds());
+    </script>
+  </body>
+</html>

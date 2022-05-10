@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 화살표 함수
+
+      // 함수1 == 함수2, 아래처럼 화살표 함수로 변환
+      function 함수1(x, y) {
+        return x + y;
+      }
+
+      let 함수2 = (x, y) => x + y;
+
+      console.log(함수1(10, 20)); // 30
+      console.log(함수2(10, 20)); // 30
+
+      let 함수3 = (x, y) => {
+        let z = x + y;
+        return z;
+      };
+
+      console.log(함수3(10, 20)); // 30
+
+      // 화살표 함수를 그냥 함수로 만들기
+
+      // [10, 20, 30].filter(x => x >= 20);
+
+      function normalFunc(x) {
+        return x >= 20;
+      }
+
+      console.log(normalFunc(10)); // false
+      console.log(normalFunc(20)); // true
+
+      // 콜백함수 : 함수에 인자로 함수를 주는 것
+
+      console.log([10, 20, 30].filter(normalFunc));
+
+      function 함수4(a, b, c) {
+        c(a + b);
+      }
+
+      console.log(함수4(10, 100, console.log));
+
+      function 함수5(x, y, c) {
+        // 1000줄의 코드
+        c(x + y);
+        // 1000줄의 코드
+        return x + y;
+      }
+
+      function aa(s) {
+        console.log("콜백함수", s);
+      }
+
+      함수5(10, 20, aa);
+
+      // 함수의 다른 형태
+
+      function test1() {
+        return "hello 1";
+      }
+
+      // 변수에 할당한 함수
+      let test2 = function () {
+        return "hello 2";
+      };
+
+      // 변수에 할당한 화살표 함수
+      let test3 = () => "hello3";
+
+      console.dir(test1);
+      console.log(test1.name);
+      console.dir(test2);
+      console.log(test2.name);
+      console.dir(test3);
+      console.log(test3.name);
+
+      // 즉시실행함수
+
+      (function () {
+        console.log("hello world");
+      })();
+
+      (function 이름2() {
+        let a1 = 10;
+        let b1 = 20;
+        console.log(a1 + b1);
+      })();
+
+      // 모든 요소가 로드된 이후에 실행, 함수는 1개만 실행 가능
+      // HTML이 다 그려지고 시작한다는 뜻
+      // window.onload = function () {};
+      // Jquery에서는 $(document).ready();
+    </script>
+  </body>
+</html>
