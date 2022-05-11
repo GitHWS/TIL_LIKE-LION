@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // call by value, reference, sharing
+
+      // call by value = 값을 전달
+      // call by reference = 주소값을 전달
+      // 자바스크립트에서는 주소값을 복사해서 전달한다.
+
+      // 클로져 = 폐쇠된 공간 안에 데이터에 접근하기 위한 테크닉 ⭐️
+
+      // 함수 내에 찾는 값이 없으면 상위 스코프(내부함수 > 외부함수 > 글로벌 순으로 검색)에서 찾음
+      // var x를 주석처리해보기
+      let x = "전역의 " + 10;
+      function test() {
+        x = "test2의 " + 100;
+        console.log(x);
+        function test2() {
+          var x = "test2의 " + 1000;
+          console.log(x);
+        }
+        test2();
+      }
+      test();
+
+      // 다른 예시
+
+      function 제곱(x) {
+        function 승수(y) {
+          return y ** x;
+        }
+        return 승수;
+      }
+
+      let 제곱2 = 제곱(2);
+      /*
+      function 승수(y){
+        return y ** 2;
+      }
+      */
+
+      let 제곱3 = 제곱(3);
+      // 제곱(3)은 함수 '승수'이기 때문에 변수 '제곱3'은 함수를 받기 때문에 함수로서 호출이 가능함
+      /*
+      function 승수(y){
+        return y ** 3;
+      }
+      */
+
+      // 함수로서 호출을 하는 과정
+      console.log(제곱2(2), 제곱3(3));
+
+      // 다른 예시
+
+      let xx = 100;
+
+      function a() {
+        let xx = 1;
+        b(); // 함수 b()에서 xx를 찾고 있기 때문에 100이 반환됨
+        // 만약 함수 a()에서 xx를 찾는다면 1이 반환됨
+        console.log(xx);
+      }
+
+      function b() {
+        console.log(xx); // 100
+      }
+
+      a(); // 100
+      b(); // 100
+
+      // 클로저는 함수가 선언된 위치에 따라 다르다(함수의 내부/외부)
+
+      let xxx = 100;
+
+      function a() {
+        let xxx = 1;
+        function b() {
+          console.log(xxx);
+        }
+        b();
+      }
+      a();
+
+      // 다른 예시(승수제조기)
+
+      function 승수제조기() {
+        let value = 0;
+        function 승수() {
+          return (++value) ** 2;
+        }
+        return 승수;
+      }
+
+      let 승 = 승수제조기();
+
+      console.log(승()); // 1
+      console.log(승()); // 4
+      console.log(승()); // 9
+      console.log(승()); // 16
+    </script>
+  </body>
+</html>

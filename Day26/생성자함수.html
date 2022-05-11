@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 모던 자바스크립트 예시
+      // 객체를 찍어내기 위한 함수
+      function User(name) {
+        this.name = name;
+        this.isAdmin = false;
+      }
+
+      // 인스턴스를 만들기 위해서 사용하려면 new 사용
+      // new 키워드가 함수가 휘발하지 않게 막아주고(함수의 생명주기를 늘려준다?) new가 붙으면 새로운 객체를 생성
+      let user = new User("호준");
+      console.log(user.name); // '호준'
+      console.log(user.isAdmin); // false
+
+      function User2(name) {
+        this.name = name;
+        console.log(this.name);
+      }
+
+      // new 키워드를 사용하지 않으면 찍어낼 수 없음, 그래서 아래처럼 접근 불가
+      let user2 = User2("호준");
+
+      // console.log(user2); // undefined. 왜냐하면 함수가 user2에 할당이 된 것이고 return값이 undefined이기 때문
+      // console.log(user2.name); // 접근 불가
+
+      let user3 = new User("민정");
+      console.log(user3);
+      console.log(user3.name);
+      console.log(user3.isAdmin);
+      console.log(user);
+      console.log(user.name);
+      console.log(user.isAdmin);
+
+      console.log(new User("호준") === new User("호준")); // 값이 같은 객체인데 왜 틀린가?
+      // this의 영향 : this라는 것 때문에 같은 값이 할당되어도 메모리 주소가 다르기 때문에 'false'
+      // this로 된 것은 같은 값이어도 다른 메모리 주소이다.(모든 값이 같은 동명이인)
+      console.log(new User("호준"));
+      console.log(new User("호준"));
+
+      console.log(User("호준") === User("호준")); // 같은 함수이기 때문에 true
+      console.log(User("호준")); // undefined
+      console.log(User("호준")); // undefined
+    </script>
+  </body>
+</html>

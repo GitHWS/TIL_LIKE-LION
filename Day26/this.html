@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // this : 객체를 가리키는 자기 참조 변수
+      function a() {
+        console.log(this); // 자신을 호출한 객체 window
+      }
+
+      a(); // window.a()과 같음
+
+      // -------------------
+
+      let myObj = {
+        val1: 100,
+        func1: function () {
+          console.log(this); // myObj
+        },
+      };
+
+      myObj.func1();
+
+      // -------------------
+
+      function sayName() {
+        console.log(this.name);
+      }
+      var name = "hero";
+      sayName();
+      // window.name = "호준";
+      // sayName();
+
+      //-----------
+
+      let 호준 = { name: "호준" };
+      let 재현 = { name: "재현" };
+
+      function sayHi() {
+        console.log(this.name);
+      }
+
+      호준.f = sayHi;
+      재현.f = sayHi;
+
+      console.log(호준, 재현);
+
+      호준.f(); // 호준
+      재현.f(); // 재현
+
+      sayHi();
+
+      // --------------------
+
+      let 호텔 = [
+        {
+          이름: "하나호텔",
+          위치: "제주도 제주시 001",
+          가격: { A: 50000, B: 30000, C: 15000 },
+          방의개수: 50,
+          예약자수: 25,
+          남은방의개수: function () {
+            return this.방의개수 - this.예약자수; // 자신의 방의 개수(50)과 예약자수(25)를 가리킴
+          },
+        },
+        {
+          이름: "둘호텔",
+          위치: "제주도 제주시 002",
+          가격: { A: 100000, B: 60000, C: 30000 },
+          방의개수: 100,
+          예약자수: 30,
+          남은방의개수: function () {
+            return this.방의개수 - this.예약자수; // 100 - 30
+          },
+        },
+        {
+          이름: "셋호텔",
+          위치: "제주도 제주시 003",
+          가격: { A: 80000, B: 50000, C: 30000 },
+          방의개수: 120,
+          예약자수: 80,
+          남은방의개수: function () {
+            return this.방의개수 - this.예약자수; // 120 - 80
+          },
+        },
+      ];
+      console.log(호텔[0].남은방의개수());
+      console.log(호텔[1].남은방의개수());
+      console.log(호텔[2].남은방의개수());
+
+      // 중복되는 기능을 함수화하여 다시 넣어보기
+      function 남은방의개수() {
+        return this.방의개수 - this.예약자수;
+      }
+
+      let 호텔2 = [
+        {
+          이름: "하나호텔",
+          위치: "제주도 제주시 001",
+          가격: { A: 50000, B: 30000, C: 15000 },
+          방의개수: 50,
+          예약자수: 25,
+          남은방의개수: 남은방의개수,
+        },
+        {
+          이름: "둘호텔",
+          위치: "제주도 제주시 002",
+          가격: { A: 100000, B: 60000, C: 30000 },
+          방의개수: 100,
+          예약자수: 30,
+          남은방의개수: 남은방의개수,
+        },
+        {
+          이름: "셋호텔",
+          위치: "제주도 제주시 003",
+          가격: { A: 80000, B: 50000, C: 30000 },
+          방의개수: 120,
+          예약자수: 80,
+          남은방의개수: 남은방의개수,
+        },
+      ];
+
+      console.log(호텔2[0].남은방의개수());
+      console.log(호텔2[1].남은방의개수());
+      console.log(호텔2[2].남은방의개수());
+
+      //----------------
+
+      function sayName() {
+        console.log(this.name);
+      }
+
+      var bruce = {
+        name: "bruce",
+        sayName: sayName,
+      };
+
+      var peter = {
+        name: "peter",
+        sayName: sayName.bind(bruce), // 변수 bruce의 결과를 따라가라
+      };
+
+      bruce.sayName();
+      peter.sayName(); // bind())로 'bruce'가 출력
+
+      // call() : 메서드의 인수에 this로 사용할 값을 전달할 수 있다.
+
+      var peter = {
+        name: "Peter Parker",
+        sayName: function () {
+          console.log(this.name);
+        },
+      };
+
+      console.log(peter.sayName());
+
+      var bruce = {
+        name: "Bruce Wayne",
+      };
+
+      peter.sayName.call(bruce);
+
+      var peter = {
+        name: "peter",
+        sayName: sayName,
+      };
+
+      sayName.call(peter);
+
+      sayName.bind(bruce);
+
+      /*
+      bind() => this를 전달한 함수를 반환해서 () 로 호출해야하고
+      call() => this를 전달한 함수를 () 로 실행해버려서 console.log(내용)과 return값이 없으니 undefined도 같이 나온다 
+      */
+
+      // apply
+
+      var 휴먼 = {
+        이름: "이호준",
+        말해이름: function (정체1, 정체2) {
+          console.log(this.이름, 정체1, 정체2);
+        },
+      };
+
+      var 휴먼2 = {
+        이름: "위니브CEO",
+      };
+
+      휴먼.말해이름.apply(휴먼2, ["하나", "둘"]);
+    </script>
+  </body>
+</html>

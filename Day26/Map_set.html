@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 익스플로러 10 지원 안함(2년 후 정도에 쓸까 할 정도?)
+      // Map이란 객체는 키-값 쌍을 가지는 '객체 자료형'의 한 종류 = Object와는 다른 자료형
+      // 객체를 수정(메서드의 추가 등)할 수 없기 때문에 나온 Map
+      let m = new Map();
+
+      m.set("하나", 1); // set ⭐️
+      m.set("둘", 2);
+      m.set("셋", 3);
+      console.log(m);
+      /*
+      m과 같은 아래처럼 같은 형태
+      {
+        '하나' : 1,
+        '둘' : 2,
+        '셋' : 3,
+      }
+      */
+      console.log(m.get("하나")); // get ⭐️
+      console.log(m.get("둘"));
+      console.log(m.get("셋"));
+
+      let obj = {
+        하나: 1,
+        둘: 2,
+        셋: 3,
+      };
+
+      console.log(obj["하나"]);
+
+      // let mm = new Map(obj);
+      // let mm = new Map("hello world");
+      let mm = new Map(Object.entries(obj));
+
+      console.log(mm);
+
+      console.log(Object.entries(obj));
+
+      let obj2 = { true: 10, false: 1000 };
+      console.log(obj2["true"]);
+      console.log(obj2[true]);
+      console.log(obj2.true);
+
+      // Map과 일반 객체의 차이
+      // 키 값으로 들어가는 데이터 형태에 제한이 없는 Map(배열 [1,2,3]처럼 생긴 것도 키값으로 올 수 있음)
+
+      mm.set([1, 2, 3], 10);
+      console.log(mm);
+
+      // Map.has(key) : 키를 가지고 있나? 불리언으로 반환
+
+      console.log(m.has("하나"));
+      console.log(m.has("다섯"));
+
+      // Map.delete(key) : 키를 삭제
+      m.delete("하나");
+      console.log(m);
+      console.log(m.has("하나")); // 없어서 false
+
+      /* for-of문으로 순회할 수 없는 객체
+      for (let i of obj) {
+        console.log(i);
+      }
+      */
+
+      for (let i in obj) {
+        console.log(i);
+      }
+
+      // map은 for-of로 순회 가능
+      for (let i of m) {
+        console.log(i);
+      }
+
+      // Map은 편하게 키, 값, 엔트리를 뽑을 수 있다.
+      console.log(m.keys());
+      console.log(m.values());
+      console.log(m.entries());
+
+      let temp = new Map([
+        ["이름", "호준"], // 키, 값
+        ["나이", 10],
+        ["재산", "-10억"],
+      ]);
+
+      // map은 데이터를 뽑는데 객체보다 더 유용함
+      console.log(temp);
+      console.log(temp.get("이름"));
+      console.log(temp.size);
+
+      // object는 데이터를 뽑는데 불가능한게 많음
+      console.log(obj.length); // undefined
+      console.log(obj.size); // undefined
+
+      // Set : 중복을 제거
+
+      let s = new Set("aaaaaaaabbbccd");
+
+      console.log(s); // {'a', 'b', 'c', 'd'}
+
+      // 만약 요소에 해당하는 알파벳의 갯수를 구하라고 한다면 쉽게 구할 수 있다.
+      console.log(s.size);
+
+      console.log(s.add("f")); // {'a', 'b', 'c', 'd', 'f'}
+
+      // 순회 가능
+      for (let i of s) {
+        console.log(i);
+      }
+
+      let ss = "aaaaaabbbccc".split("");
+
+      console.log(ss);
+      let newS = new Set(ss);
+      console.log(newS);
+
+      console.log(newS.delete("b")); // 삭제
+      console.log(newS);
+      console.log(newS.has("a")); // 가지고 있는지 확인
+
+      // 집합
+      let a = new Set("abc");
+      let b = new Set("cde");
+
+      // 교집합
+      let cro = [...a].filter((value) => b.has(value));
+      console.log(cro);
+
+      // 합집합
+      let union = new Set([...a].concat(...b));
+      console.log(union);
+
+      // 차집합
+      let dif = new Set([...a].filter((x) => !b.has(x)));
+      console.log(dif);
+    </script>
+  </body>
+</html>
