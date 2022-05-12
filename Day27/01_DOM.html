@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <div id="myId">hello</div>
+    <div>hello2</div>
+    <div class="myClass">hello2</div>
+    <script>
+      // BOM (?)- navigator
+
+      // https://paullabworkspace.notion.site/9-DOM-Document-Object-Model-7488bf43913b4108b0344d174af4239d
+
+      // parsing : 데이터를 다른 형태로 변환해주는 과정(parseInt, JSON.parse)
+
+      // DOM - DOM 은 HTML 문서의 내용을 트리형태로 구조화하여 웹페이지와 프로그래밍 언어를 연결시켜주는 역할을 합니다. 이때 각각의 요소와 속성, 콘텐츠를 표현하는 단위를 '노드(node)'라고 합니다. '텍스트(태그 내 콘텐츠 텍스트, 주석)'도 노드라는 것을 인지해야한다.
+
+      // 태그를 객체화 하여 트리 구조로 만든다 - DOM
+
+      // '브라우저'에서 제공하는 'DOM API'를 통해 HTML 태그에 언제든지 접근 가능(attribute 변경 등등)
+
+      // DOM 트리에 접근하기 - document 객체를 통해 HTML 문서에 접근이 가능합니다. document는 브라우저가 불러온 웹페이지를 나타내며, DOM 트리의 진입점 역할을 수행합니다.
+
+      //  해당 id를 가진 요소에 접근 - 태그 자체를 반환
+      document.getElementById("myId");
+
+      // Element's' - 해당 모든 요소 접근 - HTMLCollection이라는 객체로 불러오게 됨(배열 형태 - 유사 배열 Array Like object)
+      document.getElementsByTagName("div");
+
+      // Element's' - 해당하는 클래스를 가진 모든 요소 접근 - HTMLCollection이라는 객체로 불러오게됨 (배열 형태의 객체 - 유사 배열 Array Like object)
+      document.getElementsByClassName("myClass");
+
+      // .querySelector, .querySelectorAll은 CSS처럼 선택자를 입력해서 접근할 수 있다.
+      //  getElementById, getElementsByTagName, getElementsByClassName는 n번째 요소를 선택할 때 인덱싱을 통해 선택했지만 아래의 것들은 :nth-child 등 가상 선택자 사용가능
+      document.querySelector("#myId");
+      document.querySelector(".myClass");
+
+      document.querySelectorAll("div");
+    </script>
+  </body>
+</html>

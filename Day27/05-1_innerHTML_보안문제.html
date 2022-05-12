@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      const name = "John";
+      // assuming 'el' is an HTML DOM element
+      document.querySelector("div").innerHTML = name;
+      // harmless in this case
+
+      // 요소 안에 자바스크립트를 입력하지 말라
+      // const name = "<img src='x' onerror='alert(1)'>";
+      // document.querySelector("div").innerHTML = name;
+      // shows the alert
+
+      name = "<script>alert('I am John in an annoying alert!')<\/script>";
+      document.querySelector("div").innerHTML = name; // harmless in this case
+    </script>
+  </body>
+</html>

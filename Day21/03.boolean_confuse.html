@@ -1,79 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
-    document.write(`1. ${'0' == 0}`, "<br>");
-    document.write(`2. ${'0' === 0}`, "<br>");
-    document.write(`3-1. ${false == 0}`, "<br>");
-    document.write(`3-2. ${false === 0}`, "<br>");
-    document.write(`4-1. ${true == 1}`, "<br>");
-    document.write(`4-2. ${true === 1}`, "<br>");
-    document.write(`5. ${false == 0}`, "<br>");
-    document.write(`6. ${false == '0'}`, "<br>");
-    document.write(`7. ${false == 'false'}`, "<br>");
-    document.write(`8. ${0 == ''}`, "<br>"); // 주의
-    document.write(`9. ${false == ''}`, "<br>"); // 주의
-    document.write(`10. ${false == null}`, "<br>"); // 주의
-    document.write(`11. ${false == undefined}`, "<br>"); // 주의
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      document.write(`1. ${"0" == 0}`, "<br>");
+      document.write(`2. ${"0" === 0}`, "<br>");
+      document.write(`3-1. ${false == 0}`, "<br>");
+      document.write(`3-2. ${false === 0}`, "<br>");
+      document.write(`4-1. ${true == 1}`, "<br>");
+      document.write(`4-1. ${true == "1"}`, "<br>");
+      document.write(`4-2. ${true === 1}`, "<br>");
+      document.write(`5. ${false == 0}`, "<br>");
+      document.write(`6. ${false == "0"}`, "<br>");
+      document.write(`7. ${false == "false"}`, "<br>");
+      document.write(`8. ${0 == ""}`, "<br>"); // 주의
+      document.write(`9. ${false == ""}`, "<br>"); // 주의
+      document.write(`10. ${false == null}`, "<br>"); // 주의
+      document.write(`11. ${false == undefined}`, "<br>"); // 주의
 
-    document.write(`12-1. ${NaN == NaN}`, "<br>") // 주의
-    document.write(`12-2. ${NaN === NaN}`, "<br>") // 주의
-    
-    // 그냥 isNaN과 Number.isNaN의 차이
-    document.write(`12-3. ${isNaN(undefined)}`, "<br>") // 주의
-    document.write(`12-4. ${isNaN(null)}`, "<br>") // 주의
-    document.write(`12-5. ${isNaN(NaN)}`, "<br>") // 주의
-    document.write(`12-6. ${Number.isNaN(undefined)}`, "<br>") // 주의
-    document.write(`12-7. ${Number.isNaN(null)}`, "<br>") // 주의
-    document.write(`12-8. ${Number.isNaN(NaN)}`, "<br>") // 주의
+      document.write(`12-1. ${NaN == NaN}`, "<br>"); // 주의
+      document.write(`12-2. ${NaN === NaN}`, "<br>"); // 주의
 
-    // 혼란 그 자체;
-    document.write(`13-1. ${![]}`, "<br>");
-    document.write(`13-1. ${!{}}`, "<br>");
+      // 그냥 isNaN과 Number.isNaN의 차이
+      document.write(`12-3. ${isNaN(undefined)}`, "<br>"); // 주의 true
+      document.write(`12-4. ${isNaN(null)}`, "<br>"); // 주의
+      document.write(`12-5. ${isNaN(NaN)}`, "<br>"); // 주의 true
+      document.write(`12-6. ${Number.isNaN(undefined)}`, "<br>"); // 주의
+      document.write(`12-7. ${Number.isNaN(null)}`, "<br>"); // 주의
+      document.write(`12-8. ${Number.isNaN(NaN)}`, "<br>"); // 주의 true
 
-    if([]){
-      document.write('hello world1', "<br>")
-    }
-    if({}){
-      document.write('hello world2', "<br>")
-    }
-    if(''){
-      document.write('hello world3', "<br>")
-    }
-    if(undefined){
-      document.write('hello world3', "<br>")
-    }
+      // 혼란 그 자체;
+      document.write(`13-1. ${![]}`, "<br>");
+      document.write(`13-1. ${!{}}`, "<br>");
 
-    console.log("---------콘솔창을 확인하세요-----------")
-    console.log(`1. ${!!undefined}`)
-    console.log(`2. ${!!null}`)
-    console.log(`3. ${!!NaN}`)
-    console.log(`4. ${!!Infinity}`)
-    console.log(`5. ${!![]}`) // 주의
-    console.log(`6. ${!!{}}`) // 주의
-    console.log(`7. ${!!''}`) // 주의
-    console.log(`8. ${!!0}`)
-    console.log(`9. ${!!'hello world'}`)
-    console.log(`10. ${!!-100}`)
+      if ([]) {
+        document.write("hello world1", "<br>");
+      }
+      if ({}) {
+        document.write("hello world2", "<br>");
+      }
+      if ("") {
+        document.write("hello world3", "<br>");
+      }
+      if (undefined) {
+        document.write("hello world3", "<br>");
+      }
 
-    // 드모르간의 법칙 : 곱(and)과 합(or)을 서로 바꾸고 모든 변수에 not을 붙임
-    console.log('-----드모르간의 법칙------')
-    const x = 0;
-    const y = 1;
-    console.log(!(x||y) === (!x && !y))
-    console.log(!(x&&y) === (!x || !y))
+      console.log("---------콘솔창을 확인하세요-----------");
+      console.log(`1. ${!!undefined}`);
+      console.log(`2. ${!!null}`);
+      console.log(`3. ${!!NaN}`);
+      console.log(`4. ${!!Infinity}`);
+      console.log(`5. ${!![]}`); // 주의
+      console.log(`6. ${!!{}}`); // 주의
+      console.log(`7. ${!!""}`); // 주의
+      console.log(`8. ${!!0}`);
+      console.log(`9. ${!!"hello world"}`);
+      console.log(`10. ${!!-100}`);
 
-    // 형변환
-    console.log(+false);
-    console.log(+true);
-    console.log(false*1);
-    console.log(true*1);
-  </script>
-</body>
+      // 드모르간의 법칙 : 곱(and)과 합(or)을 서로 바꾸고 모든 변수에 not을 붙임
+      console.log("-----드모르간의 법칙------");
+      const x = 0;
+      const y = 1;
+      console.log(!(x || y) === (!x && !y));
+      console.log(!(x && y) === (!x || !y));
+
+      // 형변환
+      console.log(+false);
+      console.log(+true);
+      console.log(false * 1);
+      console.log(true * 1);
+    </script>
+  </body>
 </html>
