@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Carousel</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: lightsalmon;
+      }
+
+      .wrapper {
+        display: flex;
+        gap: 300px;
+        perspective: 1000px;
+      }
+
+      .carousel {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        transform-style: preserve-3d;
+        transition: all 0.5s;
+      }
+
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 300px;
+        border: 1px solid #fff;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        backface-visibility: hidden;
+      }
+
+      .btn {
+        padding: 10px;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        background-color: transparent;
+        transition: all 0.2s;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #fff;
+        color: #000;
+      }
+
+      .btn-left:active {
+        box-shadow: inset 4px 0px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-right:active {
+        box-shadow: inset -4px 0px 5px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <button type="button" class="btn btn-left"><</button>
+      <ul class="carousel"></ul>
+      <button type="button" class="btn btn-right">></button>
+    </div>
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const wrapper = document.querySelector(".wrapper");
+
+      // 슬라이드를 carousel안에 생성하는 함수
+      makeSlide(6);
+
+      function makeSlide(num) {
+        for (let i = 0; i < num; i++) {
+          const slide = document.createElement("li");
+          slide.classList.add("slide");
+          carousel.appendChild(slide);
+        }
+      }
+
+      // slide를 회전시키는 함수
+      const slides = document.querySelectorAll(".slide");
+      const slideCount = slides.length;
+
+      const imgArr = [
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80",
+        "https://images.unsplash.com/photo-1481070555726-e2fe8357725c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        "https://images.unsplash.com/photo-1432139509613-5c4255815697?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
+        "https://images.unsplash.com/photo-1574484284002-952d92456975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "https://images.unsplash.com/photo-1467453678174-768ec283a940?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1444&q=80",
+      ];
+
+      let deg = 360 / slideCount;
+      let distanceZ = Math.floor((300 * slideCount) / 3.14 / 2);
+      for (let i = 0; i < slideCount; i++) {
+        slides[i].style.transform = `rotateY(${
+          i * deg
+        }deg) translateZ(${distanceZ}px)`;
+        slides[i].style.backgroundImage = `url(${imgArr[i]})`;
+      }
+
+      // 버튼 이벤트
+      const btnLeft = document.querySelector(".btn-left");
+      const btnRight = document.querySelector(".btn-right");
+
+      let num = 0;
+
+      btnLeft.addEventListener("click", () => {
+        if (true) {
+          num++;
+        }
+        let rotateVal = num * -deg;
+        carousel.style.transform = `rotateY(${rotateVal}deg)`;
+      });
+
+      btnRight.addEventListener("click", () => {
+        if (true) {
+          num--;
+        }
+        rotateVal = num * -deg;
+        carousel.style.transform = `rotateY(${rotateVal}deg)`;
+      });
+    </script>
+  </body>
+</html>
