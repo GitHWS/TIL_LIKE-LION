@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 앵커의 기본 동작을 중지 -->
+    <a href="https://www.naver.com" class="link">네이버 링크입니다만..</a>
+
+    <!-- submit 의 기본 동작을 중지 -->
+    <form action="">
+      <button type="submit" class="submit">제출</button>
+    </form>
+    <script>
+      // event.preventDefault()는 기본 동작을 중지시킴
+
+      const link = document.querySelector(".link");
+      link.addEventListener("click", (event) => {
+        console.log("clicked");
+        event.preventDefault();
+        // 앵커태그의 기본 동작은 이동인데 event.preventDefault()를 설정하여 이동하지 않음
+      });
+
+      const submit = document.querySelector(".submit");
+      submit.addEventListener("click", (event) => {
+        console.log("clicked");
+        event.preventDefault();
+
+        // AJAX 서버와 통신할 때 submit의 새로고침을 중단시키는 event.preventDefault();
+      });
+
+      // 실습 : 이벤트 타입 contextmenu의 기본기능(브라우저 우클릭시 뜨는 메뉴)를  중단시키고 경고창을 띄우기
+
+      document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        alert("해당 페이지에서는 오른쪽 클릭을 제한합니다.");
+      });
+    </script>
+  </body>
+</html>
