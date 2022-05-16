@@ -46,7 +46,6 @@
         border: 1px solid #c4c4c4;
         box-sizing: border-box;
         border-radius: 10px;
-        cursor: pointer;
         background: url("images/icon-Triangle-down.png") right 13px center
           no-repeat;
 
@@ -84,7 +83,8 @@
 
       .list-member li {
         height: 40px;
-        padding: 5px 18px;
+        padding: 5px 13px;
+        cursor: pointer;
       }
 
       .list-member li button {
@@ -135,8 +135,12 @@
         e.target.classList.toggle("on");
       });
 
+      btnSelect.addEventListener("blur", (e) => {
+        e.target.classList.remove("on");
+      });
+
       const listMember = document.querySelector(".list-member");
-      const member = listMember.querySelectorAll("button");
+      const member = listMember.querySelectorAll("li");
 
       member.forEach((i) => {
         i.addEventListener("click", () => {
@@ -145,6 +149,56 @@
           btnSelect.classList.remove("on");
         });
       });
+
+      /* 재현 강사님 코드
+      
+      const btn = document.querySelector('.btn-select');
+        const list = document.querySelector(".list-member");
+
+        btn.addEventListener('click', () => {
+            btn.classList.toggle('on');
+        });
+
+        list.addEventListener('click', (event) => {
+            if (event.target.nodeName === 'BUTTON') {
+                btn.textContent = event.target.textContent;
+                btn.classList.remove('on');
+            }
+        });
+      
+      */
+
+      /* HTML을 작성하지 않고 하기
+      
+      const btn = document.querySelector('.btn-select');
+        const list = document.querySelector(".list-member");
+
+        const arrLang = ['Python', 'Java', 'JavaScript', 'C#', 'C/C++'];
+
+        arrLang.forEach((item) => {
+            const li = document.createElement('li');
+            const btn = document.createElement('button');
+
+            btn.setAttribute('type', 'button');
+            // <button type="button"></button>
+            btn.textContent = item;
+
+            li.appendChild(btn);
+            list.appendChild(li);
+        });
+
+        btn.addEventListener('click', () => {
+            btn.classList.toggle('on');
+        });
+
+        list.addEventListener('click', (event) => {
+            if (event.target.nodeName === 'BUTTON') {
+                btn.textContent = event.target.textContent;
+                btn.classList.remove('on');
+            }
+        });
+
+      */
     </script>
   </body>
 </html>
