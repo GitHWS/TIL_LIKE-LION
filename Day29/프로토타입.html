@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 프로토타입
+
+    const foods = ['짜장면', '뽁음밥', '해장국', '치킨'];
+
+    function FoodBot(foodNames) {
+      this.menu = foodNames;
+      this.sayMenu = function () {
+        console.log(this.menu[Math.floor(Math.random() * this.menu.length)]);
+      }
+    }
+
+    const bot1 = new FoodBot(foods);
+    console.log(bot1)
+    bot1.sayMenu();
+    const bot2 = new FoodBot(foods);
+    console.log(bot2)
+    bot2.sayMenu();
+    const bot3 = new FoodBot(foods);
+    console.log(bot3)
+    bot3.sayMenu();
+
+    // 문제점 : 결과가 다르다. 즉, 함수를 각각의 함수를 계속 새로 생성하고 다른 함수를 각각 바라보고 있었던 것이다.
+    console.log(bot1.sayMenu === bot2.sayMenu);
+    console.log(bot2.sayMenu === bot3.sayMenu);
+
+    console.log(bot1.sayMenu)
+    console.log(bot2.sayMenu)
+    console.log(bot3.sayMenu)
+
+
+    //  프로토타입 사용
+    function NewFactory2(name) {
+      this.name = name
+    }
+
+    //  프로토타입(메서드를 저장하는 공간)은 모든 인스턴스가 하나의 메서드를 공유하도록 만들어 자원을 더 효율적으로 사용하도록 도와준다.
+    NewFactory2.prototype.sayYourName = function () {
+      console.log(`제 이름은 ${this.name}입니다.`)
+    }
+
+    const newBot1 = new NewFactory2("재현");
+    console.log(newBot1.name);
+    newBot1.sayYourName();
+
+    const newBot2 = new NewFactory2("브랜든");
+    console.log(newBot2.name);
+    newBot2.sayYourName();
+
+    // 프로토타입을 통해 같은 함수를 바라보고 있기 때문에 true
+    console.log(newBot1.sayYourName === newBot2.sayYourName); // true
+
+    // 클래스 안에 함수를 만드는 것보다 프로토타입을 통해 함수를 생성하는 것이 더 좋다.
+  </script>
+</body>
+
+</html>

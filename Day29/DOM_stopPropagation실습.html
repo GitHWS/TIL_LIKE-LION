@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>나의 todo list</h1>
+  <p>1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">삭제</button></p>
+  <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+  <p>3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
+  <script>
+
+    // Nodelist인 유사배열이 할당됨
+    const paragraphs = document.querySelectorAll("p");
+    const removeBtns = document.querySelectorAll("button");
+    // console.log(paragraphs)
+    // console.log(removeBtns)
+
+    // 삭제 confirm 창에서 "예" 클릭 시 해당 목록 삭제
+    removeBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        let doRemove = confirm("삭제하시겠습니까?");
+        // e.stopPropagation()는 addEventListener안에서 위치는 상관없음
+        e.stopPropagation();
+        if (doRemove) {
+          btn.parentElement.remove();
+        }
+      });
+    });
+
+    // Nodelist.forEach는 IE를 지원하지 않기 때문에 아래의 코드를 사용하는 방법이 있음
+    // paragraphs.forEach((p) => {
+    //   p.addEventListener("click", (e) => {
+    //     alert(e.target.textContent.slice(0, -2));
+    //   });
+    // });
+
+    // IE (Nodelist.Array.forEach(IE지원불가)를 Array.prototype.forEach(IE지원)로 사용하고 싶을 때) 
+    // paragraphs는 forEach문을 사용한 적이 없지만 사용한 것처럼 기능을 빌려쓸 수 있다.
+    Array.prototype.forEach.call(paragraphs, (p) => {
+      p.addEventListener('click', (e) => {
+        alert(event.target.textContent.slice(0, -2))
+      })
+    })
+
+      // 프로토타입 : 객체가 공유하는 메서드를 저장하는 공간
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button type="button">공부하셨나요?</button>
+  <script>
+
+    document.querySelector("button").addEventListener("click", () => {
+      let anwser = confirm("공부하셨나요?");
+      me.study(anwser);
+    });
+
+    const me = {
+      name: "신현우",
+      city: '부산',
+      phoneNum: '010-0000-0000',
+      study: function (study) {
+        myStudyLevel.levelUpDown(study);
+      }
+    }
+
+    const myStudyLevel = {
+      level: 1,
+      levelUpDown: function (study) {
+        if (study === true) {
+          this.level++;
+          document.write(`축하드립니다🎉 ${me.name}님의 공부레벨이 ${myStudyLevel.level}로 레벨업 하셨습니다. 이 루틴을 유지하세요!`);
+        } else {
+          this.level--;
+          document.write(`아쉽습니다..😢 ${me.name}의 공부레벨이 ${myStudyLevel.level}로 레벨다운 하셨습니다. 마음을 다시 잡고 해봐요!`);
+        }
+      }
+    }
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const foods = ['짜장면', '뽁음밥', '해장국', '치킨'];
+
+    function FoodBot(foodNames) {
+      this.menu = foodNames;
+      this.sayMenu = function () {
+        console.log(this.menu[Math.floor(Math.random() * this.menu.length)]);
+      }
+    }
+
+    FoodBot.prototype.sayMenu = function () {
+      console.log(this.menu[Math.floor(Math.random() * this.menu.length)]);
+    }
+
+    const newBot1 = new FoodBot(foods);
+    newBot1.sayMenu();
+
+    const newBot2 = new FoodBot(foods);
+    newBot2.sayMenu();
+
+    // 같은 함수를 참조
+    console.log(newBot1.sayMenu() === newBot2.sayMenu())
+  </script>
+</body>
+
+</html>

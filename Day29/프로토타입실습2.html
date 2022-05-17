@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // const me = {
+    //   name: "신현우",
+    //   city: '부산',
+    //   phoneNum: '010-0000-0000',
+    //   study: function (study) {
+    //     myStudyLevel.levelUpDown(study);
+    //   }
+    // }
+
+
+    let anwser = confirm("공부했음?");
+
+    function MakePerson(name, city, phoneNum) {
+      this.name = name;
+      this.city = city;
+      this.phoneNum = phoneNum;
+    }
+
+    MakePerson.prototype.study = function (study) {
+      myStudyLevel.levelUpDown(anwser)
+    }
+
+    const myStudyLevel = {
+      level: 1,
+      levelUpDown: function (study) {
+        if (study === true) {
+          this.level++;
+        }
+      }
+    }
+
+    const me = new MakePerson("신현우", "부산", "010-0000-0000")
+    console.log(me)
+    const you = new MakePerson("사람", "서울", "010-1234-5678")
+    console.log(you)
+
+    console.log(me.study === you.study); // 콘솔창에 어떤 함수를 참조했는지 볼 수 있다. FunctionLocation
+    console.log(myStudyLevel.level)
+  </script>
+</body>
+
+</html>

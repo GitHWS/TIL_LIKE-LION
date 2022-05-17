@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 객체지향은 프로그래밍 방법론 중 하나로, 프로그램을 작성할 때 객체들을 만들어 서로 소통하도록 하는 방법
+
+    // 객체 지향의 객체는 '우리가 표현하고자 하는 구체적인 사물을 추상적으로 표현한 것'
+    // 객체는 행동(메서드)과 상태(프로퍼티)를 가진다.
+    const me = {
+      name: '한재현',
+      address: '제주도 제주시 인다 1길',
+      phoneNum: '010-8001-6536',
+      canWalk: function () {
+        console.log('재현이가 걷는다.');
+      },
+      teaching: function (student) {
+        student.levelUp();
+      }
+    }
+
+    const student = {
+      level: 1,
+      levelUp: function () {
+        this.level++;
+      }
+    }
+
+    me.teaching(student); // teaching 메서드 실행
+    console.log(student); // level의 변화 {level:2, levelUp: function}
+  </script>
+</body>
+
+</html>
