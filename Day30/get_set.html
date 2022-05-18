@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // getter/setter 메서드의 간편버전?
+    // #키워드를 사용하여 비공개 프로퍼티로 선언
+    // #키워드를 통한 비공개 프로퍼티는 값을 바꾸는 것에 사용하는 용도로 권장하지 않음
+    class Robot {
+      #password
+
+      constructor(name, pw) {
+        this.name = name;
+        this.#password = pw;
+      }
+
+
+      sayYourName() {
+        console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+      }
+
+      get password() {
+        return this.#password
+      }
+
+      set password(pw) {
+        this.#password = pw;
+      }
+    }
+
+    const bot = new Robot("영웅", 1234);
+
+    // get 키워드를 접근하려면 함수 형태라 함수처럼 접근할 것 같지만 함수에 접근하는 느낌이 아닌 마치 프로퍼티에 접근하는 듯이 사용해야함
+    // console.log(bot.password());
+    console.log(bot.password); // 1234
+    // 값도 쉽게 수정가능
+    bot.password = 6789;
+    // set 키워드를 사용하려면 프로퍼티의 값을 할당하는 것처럼!
+    console.log(bot.password); // 6789
+
+    // 협업을 위해서 비공개 프로퍼티를 get/set 키워드를 사용할 시에 주석으로 정보를 남기는 것이 좋다.
+    // 비공개 프로퍼티에 쉽게 접근하기 위해 사용하는 get/set!
+  </script>
+</body>
+
+</html>

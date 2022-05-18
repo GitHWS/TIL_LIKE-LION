@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // #키워드를 사용하여 비공계 프로퍼티로 선언
+    class Robot {
+      #password
+
+      constructor(name, pw) {
+        this.name = name;
+        this.#password = pw;
+      }
+
+
+      sayYourName() {
+        console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+      }
+
+      // getter - 자바스크립트의 문법적인 명칭이 아닌 값을 받는 역할으로 인한 명칭
+      getPassword() {
+        return this.#password
+      }
+
+      // setter - 자바스크립트의 문법적인 명칭이 아닌 값을 수정하는 역할으로 인한 명칭
+      setPassword(pw) {
+        this.#password = pw;
+      }
+    }
+
+    const bot = new Robot("영웅", "1234");
+
+    console.log(bot)
+    console.log(bot.sayYourName());
+    // console.log(bot.#password); // 에러 발생으로 접근 불가
+    // 사용하기 위해 getter/setter 메서드를 따로 생성해야함
+
+
+
+
+
+  </script>
+</body>
+
+</html>
