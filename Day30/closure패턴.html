@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 모듈 패턴
+    // function Person() {
+    //   let age = 15; // 이 공간을 폐쇄된 공간, 중요한 정보를 의도적으로 보호하기 위해 만드는 공간, 클로저
+    //   return {
+    //     getAge: function () {
+    //       return age;
+    //     },
+    //     setAge: function (data) {
+    //       age = data;
+    //     }
+    //   }
+    // }
+
+    // const person = Person();
+
+    // console.log(person);
+    // console.log(person.getAge());
+    // console.log(person.age); // 밖에서 접근 불가 undefined
+    // person.setAge(40);
+    // console.log(person.getAge());
+
+
+
+    // 사용자 정의 타입 패턴 - 중요한 정보를 은닉하기 위함
+
+    function PersonType() {
+      this.age = 35;
+    }
+
+    PersonType.prototype.getAge = function () {
+      return this.age
+    }
+
+    const person2 = new PersonType();
+    console.log(person2.getAge());
+
+    console.log(person2.age) // 35
+    person2.getAge = 50;
+    console.log(person2) // 35
+
+
+    // 모듈 + 사용자 정의 타입 혼합 패턴, 비공개 변수를 포함한 타입을 생성할 때 사용
+    function PersonType2() {
+      let age = 25;
+
+      function innerPersonType() { }
+
+      innerPersonType.prototype.getAge = function () {
+        return age;
+      };
+
+      return innerPersonType; // 밖으로 내보냄
+    }
+
+    const Person3 = PersonType2();
+    const person3 = new Person3();
+
+    console.log(person3.getAge()); // 25
+    console.log(person3.age); // undefined
+
+    // 즉시실행 함수(IIFE)를 통한 모듈 + 사용자 정의 타입 혼합 패턴 간결하게 만듬
+
+    const PersonType3 = (
+      function () {
+        let age = 15;
+
+        function innerPersonType() { }
+
+        innerPersonType.prototype.getAge = function () {
+          return age;
+        }
+
+        return innerPersonType;
+      }
+    )();
+
+    const personWithSecret = new PersonType3();
+    console.log(personWithSecret);
+    console.log(personWithSecret.getAge());
+  </script>
+</body>
+
+</html>

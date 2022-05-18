@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var outer = function () {
+      var a = 1; // 비공개 변수 - 다른 곳에서 접근할 수 없지만 함수 내에서는 접근 가능한 변수
+
+      var inner = function () {
+        var b = 6;
+        var c = 7;
+        a = a + b + c;
+
+        console.log(a);
+      }
+      return inner;
+    }
+    var newInner = outer();
+    newInner(); // 실질적인 값이 inner()
+
+    // 내부함수가 외부함수가 종료되어 오래 살아 남아 있는 경우? 클로저 - 외부함수의 스코프 체인은 살려주고 함수 자체는 종료(폐쇄)시킨다고 생각하자, 일종의 테크닉
+
+
+    // 비공개 변수만들기
+
+    var func1 = function () {
+      var a = 1;
+
+      var func2 = function () {
+        var b = 6;
+        a = a + b;
+        console.log(a);
+      }
+      return func2;
+    }
+
+    var result = func1();
+    result();
+
+    // 렉시컬 스코프
+
+    var x = 1;
+
+    function foo() {
+      var x = 10;
+      bar();
+    }
+
+    function bar() {
+      console.log(x);
+    }
+
+    foo();
+    bar();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 클래스 상속 - extends 키워드 사용
+    // 상속을 받는 클래스 === 파생 클래스(derived classes)
+    // 부모 클래스의 프로퍼티를 상속받기 위해 super 함수를 사용합니다. 이때 super는 부모 생성자를 참조 -> super 함수
+
+    class Robot {
+      // 클래스의 생성자 함수입니다. 하나의 클래스는 하나의 생성자만 정의할 수 있습니다. 
+      // 그리고 생성자 함수는 new 키워드가 호출될때 자동으로 실행됩니다.
+      constructor(name) {
+        this.name = name;
+      }
+
+      // 메소드를 정의합니다. 메소드는 클래스가 생성한 인스턴스를 통해 사용할 수 있습니다.
+      sayYourName() {
+        console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+      }
+    }
+
+    class BabyRobot extends Robot {
+      constructor(name) {
+        super(name);
+        this.ownName = '아이크';
+      }
+
+      sayBabyName() {
+        this.sayYourName();
+        console.log('Suceeding you, Father!')
+      }
+    }
+
+    const baby = new BabyRobot('재현');
+
+    console.log(baby);
+    console.log(baby.name);
+    console.log(baby.sayBabyName());
+    console.log(baby.ownName);
+    console.log(baby.sayYourName());
+
+
+    // 상속 실습 - https://paullabworkspace.notion.site/10-f691517b1cc7444783a15ee42658cdbf#f2583df9b1f44951a13e87c98dae6cb6
+
+
+    class Sausage {
+      constructor(material1, material2) {
+        this.material1 = material1;
+        this.material2 = material2;
+      }
+
+      taste() {
+        console.log(`${this.material1}와 ${this.material2} 맛이 난다!`)
+      }
+    }
+
+    class FiresSausage extends Sausage {
+      // 파생 클래스에 추가할 것이 없을 시 온전한 부모의 모든 것을 상속받으려면 생성자 함수 자체를 생략가능(자동으로 불러옴)
+      // constructor(material1, material2) {
+      //   super(material1, material2);
+      // }
+
+      // 부모의 메서드와 같은 이름을 자식 메서드에 사용해서 덮을 수 있음
+      taste() {
+        console.log(`${this.material1}와 ${this.material2} 맛이 난다! 불맛도 난다!`)
+      }
+    }
+
+    const sausage = new Sausage("소고기", "돼지고기");
+    console.log(sausage.taste());
+
+
+    const sausage1 = new FiresSausage("돼지고기", "양파");
+    console.log(sausage1);
+    console.log(sausage1.taste());
+    const sausage2 = new FiresSausage("소고기", "고추");
+    console.log(sausage2);
+    console.log(sausage2.taste());
+
+  </script>
+</body>
+
+</html>
