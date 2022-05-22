@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      margin: 100px;
+      width: 100px;
+      height: 100px;
+      background-color: cornflowerblue;
+      color: #fff;
+      text-align: center;
+      line-height: 100px;
+      /* transition: all 0.3s; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">BOX</div>
+  <script>
+    // const box = document.querySelector(".box");
+
+    // let posX = 0;
+    // let posY = 0;
+    // let radius = 0;
+
+    // document.addEventListener("keydown", (e) => {
+    //   switch (e.key) {
+    //     case "ArrowRight":
+    //       posX += 10;
+    //       console.log(posX);
+    //       box.style.transform = `translate(${posX}px, ${posY}px)`;
+    //       break;
+    //     case "ArrowLeft":
+    //       posX -= 10;
+    //       console.log(posX);
+    //       box.style.transform = `translate(${posX}px, ${posY}px)`;
+    //       break;
+    //     case "ArrowDown":
+    //       posY += 10;
+    //       console.log(posY);
+    //       box.style.transform = `translate(${posX}px, ${posY}px)`;
+    //       break;
+    //     case "ArrowUp":
+    //       posY -= 10;
+    //       console.log(posY);
+    //       box.style.transform = `translate(${posX}px, ${posY}px)`;
+    //       break;
+    //     default:
+    //       console.log("사용할 수 없는 키입니다.");
+    //       break;
+    //   }
+    // })
+
+    // window.requestAnimationFrame(callback) 사용 - 재귀함수로 사용
+
+    const box = document.querySelector('.box');
+    let pos = 0;
+    let keys = {};
+
+    function move(event) {
+      keys[event.key] = true;
+      console.log(keys);
+    }
+
+    function stop(event) {
+      keys[event.key] = false;
+      console.log(keys);
+    }
+
+    document.addEventListener('keydown', move);
+    document.addEventListener('keyup', stop);
+
+
+    function play() {
+      if (keys.ArrowRight) {
+        pos += 1;
+        box.style.transform = `translateX(${pos}px)`;
+      }
+      if (keys.ArrowLeft) {
+        pos -= 1;
+        box.style.transform = `translateX(${pos}px)`;
+      }
+
+      window.requestAnimationFrame(play); // 재귀함수
+    }
+
+    window.requestAnimationFrame(play);
+
+  </script>
+</body>
+
+</html>
