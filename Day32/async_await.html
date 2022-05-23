@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // async가 붙은 함수는 항상 반환값을 resolved로 하는 프로미스를 반환한다.
+
+    let snack = async function () {
+      return "cake!";
+    };
+
+    console.log(snack);
+    console.log(snack());
+
+    // async & await 비동기 처리가 되어야하는 메서드 앞에 await 키워드를 넣어서 사용한다. await은 프로미스를 반환하는 곳에만 사용 가능하다.
+
+
+    function cook(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    const myCake = async () => {
+      await cook(1000);
+      return 'cake';
+    };
+
+    const myCoffee = async () => {
+      await cook(500);
+      return 'coffee';
+    };
+    const myCookie = async () => {
+      await cook(5000);
+      return 'cookie';
+    };
+
+    async function asyncProcess() {
+      const cake = await myCake();
+      console.log(cake);
+      const coffee = await myCoffee();
+      console.log(coffee);
+      const cookie = await myCookie();
+      console.log(cookie);
+    }
+
+    asyncProcess();
+    console.log('hello world');
+
+
+    // await 동기 처리, promise.all 비동기
+  </script>
+</body>
+
+</html>
