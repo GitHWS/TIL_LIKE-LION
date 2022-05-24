@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    try { // 테스트 성공 시
+      let x = 10;
+      let y = 10;
+      // 에러 생성자
+      // new Error(message);
+      // new SyntaxError(message);
+      // new ReferenceError(message);
+      throw new SyntaxError("문법 에러")
+      console.log(x + y + z);
+    } catch (e) {
+      console.log(e);
+      console.dir(e);
+      console.log(e.message);
+    } finally {
+      console.log('end')
+    }
+
+  </script>
+</body>
+
+</html>

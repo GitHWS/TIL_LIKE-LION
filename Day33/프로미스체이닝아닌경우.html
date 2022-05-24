@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 프라미스 체이닝이 아닌 경우 - then.then.then으로 연결되지 않음
+    let p = new Promise(function (resolve, reject) {
+      setTimeout(() => resolve(10), 1000);
+    });
+
+    p.then(result => {
+      console.log(result);
+      return result ** 2;
+    });
+
+    p.then(result => {
+      console.log(result);
+      return result ** 2;
+    });
+
+    p.then(result => {
+      console.log(result);
+      return result ** 2;
+    });
+  </script>
+</body>
+
+</html>
