@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li>hello world</li>
+      <li>hello world</li>
+      <li>hello world</li>
+      <li>hello world</li>
+      <li>hello world</li>
+      <li>hello world</li>
+      <li>hello world</li>
+      <li>hello world</li>
+      <li>hello world</li>
+      <li>hello world</li>
+    </ul>
+    <script>
+      // gt : greater, 인덱스 n번째 다음의 모든 인덱스 선택
+      // $("li:gt(6)").css("color", "red");
+
+      // eq : equal, 인덱스 n번째 선택
+      $("li").eq(3).css("color", "blue"); // 인덱스 0부터 선택
+      $("li:nth-child(3n)").css("color", "red"); // css처럼 1번째부터 선택
+      $("li:first").css("color", "gold");
+      $("li:last").css("color", "green");
+      // $("li:even").css("color", "cornflowerblue"); // 홀수번째 모두
+      // $("li:odd").css("color", "cornflowerblue"); // 짝수번째 모두
+    </script>
+  </body>
+</html>
