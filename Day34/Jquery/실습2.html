@@ -1,0 +1,50 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>위니브 스토어</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script>
+      /*
+        - root > main > h1 + ul 요소를 만들고 각 요소들을 자식으로 추가
+        - 이제 ul의 li에 들어갈 데이터를 가져오려고 $.ajax({...}) 를 수정하려고 함
+      */
+      const $root = $("#root"); // 나중에 재사용하기 위한 변수 처리
+      $root.append("<main class='product'></main>");
+      const $main = $("main");
+      $main.append(
+        `<h1 class="ir">상품목록 페이지</h1><ul class="product-list"></ul>`
+      );
+      const $product_list = $(".product-list");
+
+      var product;
+      $.ajax({
+        url: "http://test.api.weniv.co.kr/mall",
+        async: false, // true가 비동기로 동작하게 된다. false는 순차적으로 처리(동기)
+        dataType: "JSON",
+        success: function (result) {
+          // $("#data").text(result);
+          console.log(1);
+          product = result;
+          product.forEach((data) => {
+            // console.log(data);
+            $product_list.append(`
+            <li>
+              <img src="http://test.api.weniv.co.kr/${data["thumbnailImg"]}">
+              <p>${data["productName"]}</p>
+              <p>${data["price"]}</p>
+              </li>
+              `);
+          });
+        },
+      });
+      console.log(2);
+      console.log(product);
+    </script>
+  </body>
+</html>

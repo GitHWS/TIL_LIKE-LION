@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="title">TITLE</h1>
+      <ul class="items">
+        <li class="items">item 1</li>
+        <li class="items">item 2</li>
+      </ul>
+    </div>
+
+    <div class="class">hello world1</div>
+    <div class="class">hello world2</div>
+    <div class="class">hello world3</div>
+    <div class="class">hello world4</div>
+    <div class="class">hello world5</div>
+    <div class="class">hello world6</div>
+    <div class="class">hello world7</div>
+    <div class="class">hello world8</div>
+    <div class="class">hello world9</div>
+    <div class="class">hello world10</div>
+
+    <script>
+      console.log($("span").parent());
+      console.log($("div").children());
+      console.log($("div").first());
+      console.log($("div").last());
+      $(".title").parent();
+      $("div").children();
+      $("div").first().text("안녕");
+      $("div").last().text("잘가");
+    </script>
+  </body>
+</html>

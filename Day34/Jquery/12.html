@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>has demo</title>
+    <style>
+      .full {
+        border: 1px solid red;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  </head>
+
+  <body>
+    <!-- div#${value-$}*10 -->
+
+    <script>
+      // $('div').filter(':even').css("color", "red");
+      $("div").filter((index, selector) => {
+        if (index % 3 == 0) {
+          console.log(selector);
+          $(selector).css("color", "red");
+        }
+      });
+    </script>
+  </body>
+</html>

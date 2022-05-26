@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>attributeContains demo</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  </head>
+  <body>
+    <input name="man-news" />
+    <input name="milkman" />
+    <input name="letterman2" />
+    <input name="newmilk" />
+
+    <script>
+      // name 속성에 'man'이라는 값이 포함되면 .val메서드 실행
+      $("input[name*='man']").val("has man in it!");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <button type="button" id="btn_data">클릭해주세요!</button>
+    <div id="data">data</div>
+    <script>
+      $("#btn_data").click(function () {
+        //제이쿼리는 ajax메서드을 통해 데이터 로딩 등 비동기통신을 할 수 있음
+        //$.ajax({경로, 동기화 여부, 성공하면 할 일})
+        //$.ajax({url:'경로', async: true, success:function(result){}})
+        $.ajax({
+          url: "https://raw.githubusercontent.com/paullabkorea/10000hour/main/index.html",
+          async: true,
+          success: function (result) {
+            $("#data").html(result);
+          },
+        });
+      });
+
+      /*
+      자바스크립트를 이용하여 브라우저가 서버와 비동기적으로 통신하는 방식
+
+    js
+    - XMLHttpRequest
+    - fetch
+    - axios
+
+    jquery
+    - load
+    - ajax
+      */
+    </script>
+  </body>
+</html>
