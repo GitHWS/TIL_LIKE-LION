@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/a92811015a.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- crossorigin 속성 : Cross-Origin Resource Sharing 교차 출처 리소스 공유 -->
+    <title>WYSIWYG - no execCommand</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 
+      1. 기본 UI를 제작합니다.
+      2. 요소가 편집 가능해야합니다.
+      3. 버튼을 눌렀을 때 뭔가 기능이 동작해야합니다.
+        1. 드래그를 통해 우리가 선택한 노드가 무엇인지 파악할 수 있어야합니다.
+        2. 기능1 : 선택한 노드의 한 줄이 통으로 스타일이 바뀌는 기능
+        3. 기능2 : 선택한 노드만 바뀌는 기능
+    -->
+    <article id="app">
+      <ul class="options">
+        <li>
+          <!-- data-surfix="value" : 요소에 데이터를 저장해주는 속성, data는 prefix로 무조건적으로 들어가야하지만 surfix부분은 변수처럼 네이밍을 하면 된다. -->
+          <button type="button" data-command="h1">H1</button>
+        </li>
+        <li><button type="button" data-command="h2">H2</button></li>
+        <li><button type="button" data-command="h3">H3</button></li>
+        <li><button type="button" data-command="p">P</button></li>
+        <li>
+          <button type="button" data-command="strong">
+            <i class="fa-solid fa-bold"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="em">
+            <i class="fa-solid fa-italic"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="u">
+            <i class="fa-solid fa-underline"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="del">
+            <i class="fa-solid fa-strikethrough"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="style_left">
+            <i class="fa-solid fa-align-left"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="style_center">
+            <i class="fa-solid fa-align-center"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="style_right">
+            <i class="fa-solid fa-align-right"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="style_justify">
+            <i class="fas fa-align-justify"></i>
+          </button>
+        </li>
+      </ul>
+      <!-- contenteditable 속성 : 내부 콘텐츠를 수정할 수 있는 속성, 기본값은 false이고 true시 내부 콘텐츠를 수정 가능하다. -->
+      <div class="editor" contenteditable="true">
+        <h1>나만의 WYSIWYG</h1>
+        <p>hello world</p>
+      </div>
+    </article>
+    <script>
+      const editor = document.querySelector(".editor");
+
+      document.querySelectorAll(".options button").forEach((item) =>
+        item.addEventListener("click", () => {
+          const command = item.dataset.command;
+          const selectedTxt = window.getSelection();
+
+          // css style로 컨트롤하는 경우
+          if (command.includes("style")) {
+            const parentEl = selectedTxt.anchorNode.parentElement;
+            parentEl.style.textAlign = command.slice(6);
+          } else {
+            // html 요소를 이용해서 바꾸는 경우
+            const createEl = document.createElement(command);
+            // getSelection() : 텍스트 블럭을 가리키는 함수
+
+            if (
+              command === "h1" ||
+              command === "h2" ||
+              command === "h3" ||
+              command === "p"
+            ) {
+              // anchorNode : 선택한 부분의 영역이 어떤 노드에 위치하는지 확인하는 프로퍼티
+              const parentEl = selectedTxt.anchorNode.parentElement;
+              // console.log(parentEl);
+              createEl.textContent = parentEl.textContent;
+              // replaceChild(교체될 요소,교체할 요소) : 자식 노드를 교체하는 함수
+              editor.replaceChild(createEl, parentEl);
+            } else {
+              // getRangeAt(index) : 셀렉션 객체를 레인지 객체로 변환하는 메서드, 현재 선택한 것들을 반환하기 위한 메서드, index가 1인 rangeCount의 값보다 크거나 같거나 음수이면 에러 반환
+              const selectedTxtRange = selectedTxt.getRangeAt(0);
+              // surroundContents() : 텍스트를 바탕으로 요소를 만들어주고 선택한 영역을 감싸는 메서드
+              selectedTxtRange.surroundContents(createEl);
+            }
+          }
+        })
+      );
+    </script>
+  </body>
+</html>

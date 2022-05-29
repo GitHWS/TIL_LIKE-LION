@@ -1,0 +1,40 @@
+h1 {
+  font-size: 28px;
+}
+
+#app {
+  overflow: hidden;
+  border: 1px solid #dadee6;
+  border-radius: 10px;
+}
+
+.editor {
+  min-height: 150px;
+  padding: 10px;
+}
+
+.options {
+  display: flex;
+  gap: 5px;
+  padding: 8px;
+  margin: 0;
+  list-style: none;
+  border-bottom: 1px solid #dadee6;
+  background-color: #dadee6;
+}
+
+.options li:nth-child(4n) {
+  margin-right: 8px;
+}
+
+.options li button {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.options li button:hover {
+  background-color: #f7f9fc;
+  border-color: #f7f9fc;
+}

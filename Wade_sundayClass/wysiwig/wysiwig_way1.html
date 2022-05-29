@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/a92811015a.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- crossorigin 속성 : Cross-Origin Resource Sharing 교차 출처 리소스 공유 -->
+    <title>WYSIWYG - use execCommand</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 
+      1. 기본 UI를 제작합니다.
+      2. 요소가 편집 가능해야합니다.
+      3. 버튼을 눌렀을 때 뭔가 기능이 동작해야합니다.
+        1. 드래그를 통해 우리가 선택한 노드가 무엇인지 파악할 수 있어야합니다.
+        2. 기능1 : 선택한 노드의 한 줄이 통으로 스타일이 바뀌는 기능
+        3. 기능2 : 선택한 노드만 바뀌는 기능
+    -->
+    <article id="app">
+      <ul class="options">
+        <li>
+          <!-- data-surfix="value" : 요소에 데이터를 저장해주는 속성, data는 prefix로 무조건적으로 들어가야하지만 surfix부분은 변수처럼 네이밍을 하면 된다. -->
+          <button type="button" data-command="h1">H1</button>
+        </li>
+        <li><button type="button" data-command="h2">H2</button></li>
+        <li><button type="button" data-command="h3">H3</button></li>
+        <li><button type="button" data-command="p">P</button></li>
+        <li>
+          <button type="button" data-command="bold">
+            <i class="fa-solid fa-bold"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="italic">
+            <i class="fa-solid fa-italic"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="underline">
+            <i class="fa-solid fa-underline"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="strikethrough">
+            <i class="fa-solid fa-strikethrough"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="justifyLeft">
+            <i class="fa-solid fa-align-left"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="justifyCenter">
+            <i class="fa-solid fa-align-center"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="justifyRight">
+            <i class="fa-solid fa-align-right"></i>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-command="justifyFull">
+            <i class="fas fa-align-justify"></i>
+          </button>
+        </li>
+      </ul>
+      <!-- contenteditable 속성 : 내부 콘텐츠를 수정할 수 있는 속성, 기본값은 false이고 true시 내부 콘텐츠를 수정 가능하다. -->
+      <div class="editor" contenteditable="true">
+        <h1>나만의 WYSIWYG</h1>
+        <p>hello world</p>
+      </div>
+    </article>
+
+    <script>
+      document.querySelectorAll(".options button").forEach((item) =>
+        item.addEventListener("click", () => {
+          // data-command에 접근하려면 dataset를 프로퍼티 사용해야한다.
+          const command = item.dataset.command;
+          if (
+            command === "h1" ||
+            command === "h2" ||
+            command === "h3" ||
+            command === "p"
+          ) {
+            // execCommand(실행명령어,기본UI제공여부, 입력변수) : 편집 가능의 영역에 한해서 명령을 내림
+            // 첫번째 매개변수는 실행명령어 https://developer.mozilla.org/ko/docs/Web/API/Document/execCommand#%EB%AA%85%EB%A0%B9%EC%96%B4 참고하길 바란다.
+            // 두번째 매개변수는 기본UI제공여부는 불리언 값으로 준다. 다만 IE 기준이기 때문에 false를 사용한다.
+            // 세번째 매개변수는 입력변수이다.
+            // 단 execCommand는 Deprecated가 되어있다는 것을 명심해야한다.
+            document.execCommand("formatBlock", false, command);
+          } else {
+            document.execCommand(command);
+          }
+        })
+      );
+    </script>
+  </body>
+</html>
