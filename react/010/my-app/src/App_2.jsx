@@ -5,7 +5,7 @@ function Resume(props) {
   const [like, setLike] = useState(0);
 
   function handleClickLike() {
-    setLike(like + 1);
+    setLike(like + 1); // like = like + 1, setLike를 하면 like를 쓰는 모든 곳이 재렌더링
     console.log(like);
   }
 

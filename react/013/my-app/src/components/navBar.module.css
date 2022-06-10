@@ -1,0 +1,19 @@
+.nav {
+  padding: 20px;
+  background-color: black;
+  color: #fff;
+}
+
+.list {
+  display: flex;
+  gap: 30px;
+}
+
+.item {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.item:hover {
+  color: cyan;
+}
