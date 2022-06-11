@@ -1,0 +1,27 @@
+.hero {
+  padding: 100px 0;
+  height: 300px;
+  background-color: #282c34;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 60px;
+  font-weight: 700;
+  color: #61dafb;
+}
+.heroSubTitle {
+  padding-top: 20px;
+  font-size: 30px;
+  font-weight: lighter;
+  color: #fff;
+}
+
+.linkBox {
+  padding-top: 65px;
+}
+
+.start {
+}
+.read {
+}
