@@ -1,0 +1,7 @@
+.desc {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  row-gap: 50px;
+  margin: 100px 90px;
+}

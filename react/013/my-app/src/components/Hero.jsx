@@ -13,7 +13,7 @@ export default function Hero() {
             시작하기
           </a>
           <a href="null" className={styles.read}>
-            자습서 읽어보기
+            자습서 읽어보기 &gt;
           </a>
         </div>
       </section>

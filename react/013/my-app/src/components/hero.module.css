@@ -1,6 +1,5 @@
 .hero {
-  padding: 100px 0;
-  height: 300px;
+  padding: 95px 0 85px;
   background-color: #282c34;
   text-align: center;
 }
@@ -10,6 +9,7 @@
   font-weight: 700;
   color: #61dafb;
 }
+
 .heroSubTitle {
   padding-top: 20px;
   font-size: 30px;
@@ -18,10 +18,24 @@
 }
 
 .linkBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   padding-top: 65px;
+  font-size: 20px;
 }
 
 .start {
+  padding: 15px 20px;
+  background-color: #61dafb;
 }
+
+.start:hover {
+  background-color: #fff;
+}
+
 .read {
+  color: #61dafb;
+  font-weight: lighter;
 }
