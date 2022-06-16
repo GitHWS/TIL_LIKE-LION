@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <input type="text" />
+    <div>
+      <div id="btn_box"></div>
+    </div>
+
+    <script>
+      // state는 현재 상태, action은 주문 받은 것!
+      function reducer(state, action) {
+        console.log(state, action);
+        if (state === undefined) {
+          return { color: "yellow" };
+        }
+        var newState;
+        if (action.type === "CHANGE_COLOR") {
+          //복제해야 합니다. 그냥 {color:'red'}이런 식으로 리턴해줘도 되긴 하는데 리덕스의 고급기능을 쓰지 못합니다.
+          // Object.assign({}, 빈객체에 복제할 값1, 빈객체에 복제할 값2...);
+          console.log(state);
+          // newState = Object.assign({}, state, { color: action.color });
+          newState = { ...state, color: action.color };
+          console.log(`newState : ${newState}`);
+          console.log(newState);
+        }
+        return newState;
+      }
+      var store = Redux.createStore(
+        reducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ &&
+          window.__REDUX_DEVTOOLS_EXTENSION__() // redux dev tools를 사용하기 위한 코드
+      );
+      function btn_box() {
+        var state = store.getState();
+        console.log(state);
+        //type은 반드시 있어야 합니다.
+        // 바뀔 때마다 console에 store.getState()를 실행해보세요.
+        document.querySelector("#btn_box").innerHTML = `
+                <div class="container" id="component_red" style="background-color:${state.color}">
+                        <h1>red</h1>
+                        <input type="button" value="fire" onclick="
+                            store.dispatch({type:'CHANGE_COLOR', color:'red'});
+                        ">
+                </div>
+            `;
+      }
+      // 값이 바뀔 때마다 red 함수를 호출
+      store.subscribe(btn_box);
+      btn_box();
+    </script>
+  </body>
+</html>

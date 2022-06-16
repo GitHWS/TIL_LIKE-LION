@@ -3,6 +3,7 @@ import { useState, useEffect, useLayoutEffect } from "react";
 function App() {
   const [value, setValue] = useState(100);
 
+  // useLayoutEffect를 사용하면 깜빡임 현상을 해결할 수 있다.
   // useLayoutEffect(() => {
   //   if (value >= 1000) {
   //     setValue(300);
