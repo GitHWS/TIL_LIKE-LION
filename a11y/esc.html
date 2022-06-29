@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .tooltip {
+        position: relative;
+        padding: 30px;
+        border: 1px solid black;
+      }
+
+      .tooltip:hover .tooltip-content,
+      .tooltip:focus .tooltip-content {
+        display: block;
+      }
+
+      .tooltip-content {
+        display: none;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 140px;
+        padding: 10px;
+        border: 1px solid black;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tooltip" role="tooltip" tabindex="0">
+      구독 게시판
+      <span class="tooltip-content">구독 게시판의 글을 확인해보세요.</span>
+    </div>
+
+    <form>
+      <label for="test">입력하세요</label>
+      <input id="test" type="text" required />
+      <button>제출하기</button>
+    </form>
+    <script>
+      const myInp = document.querySelector("#test");
+
+      myInp.addEventListener("invalid", (event) => {
+        event.preventDefault();
+        // 툴팁을 대체할 코드 입력...
+      });
+
+      const tooltip = document.querySelector(".tooltip");
+      const toolCont = document.querySelector(".tooltip-content");
+
+      // 툴팁 esc키를 누르면 사라지게 하기 위한 이벤트
+      tooltip.addEventListener("keydown", (event) => {
+        if (event.keyCode === 27) {
+          toolCont.style.display = "none";
+        }
+      });
+
+      // 툴팁에 포커스가 풀렸을 때 스타일 속성을 삭제하는 이벤트
+      tooltip.addEventListener("blur", () => {
+        toolCont.removeAttribute("style");
+      });
+
+      // 레거시 코드 (이벤트 리스너 나오기 전)
+      // tooltip.onkeydown = function (event) {
+      //   if (event.keyCode === 27) {
+      //     toolCont.style.display = "none";
+      //   }
+      // };
+    </script>
+  </body>
+</html>

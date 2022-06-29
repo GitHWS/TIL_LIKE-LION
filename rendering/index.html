@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+        position: relative;
+      }
+
+      div:nth-child(1) {
+        animation: move 5s;
+      }
+
+      div:nth-child(2) {
+        background-color: lightgreen;
+        animation: move2 5s;
+      }
+
+      div:nth-child(3) {
+        background-color: lightsalmon;
+        animation: move3 5s;
+      }
+
+      @keyframes move {
+        from {
+          /* left: 0; */
+          transform: translateX(0);
+        }
+        to {
+          /* left: 100px; */
+          transform: translateX(100px);
+        }
+      }
+
+      @keyframes move2 {
+        from {
+          /* left: 0; */
+          transform: translateX(0);
+        }
+        to {
+          /* left: 200px; */
+          transform: translateX(200px);
+        }
+      }
+
+      @keyframes move3 {
+        from {
+          /* left: 0; */
+          transform: translateX(0);
+        }
+        to {
+          /* left: 300px; */
+          transform: translateX(300px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>
