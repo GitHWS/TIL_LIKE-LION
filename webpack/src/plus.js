@@ -1,13 +1,16 @@
 // const obj = {};
 
 // (() => {
-//   function plus(a, b) {
-//     return a + b;
-//   }
+//     function plus(a, b) {
+//         return a + b;
+//     }
 
-//   obj.plus = plus;
+//     obj.plus = plus;
 // })();
 
-export function plus(a, b) {
-  return a + b;
-}
+
+// export function plus(a, b) {
+//     return a + b;
+// }
+
+console.log('from plus' + pw);
